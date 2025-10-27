@@ -5,6 +5,7 @@
   <title>Fotografa Isa — Fotografia & Videomaker</title>
   <meta name="description" content="Fotografia e videomaker para eventos, ensaios e produções. Agende sua sessão." />
   <link rel="icon" href="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     /* ==== RESET ==== */
@@ -12,50 +13,42 @@
     body{color:#fff;background:#000;line-height:1.6;}
     img,video{max-width:100%;display:block;}
 
-
-
-
-
-    
     /* ==== REDES SOCIAIS ==== */
-    
+    .socials {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
 
-  .socials {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-  }
+    .socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      color: white;
+      font-size: 22px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
 
-  .socials a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    color: white;
-    font-size: 22px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-  }
+    /* Cores oficiais */
+    .socials a.instagram {
+      background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    }
 
-  /* Cores oficiais */
-  .socials a.instagram {
-    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-  }
+    .socials a.whatsapp {
+      background-color: #25D366;
+    }
 
-  .socials a.whatsapp {
-    background-color: #25D366;
-  }
-
-  /* Hover */
-  .socials a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
-    
+    /* Hover */
+    .socials a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
     /* ==== CONTAINERS ==== */
     .container{width:90%;max-width:1200px;margin:auto;}
@@ -76,7 +69,8 @@
 
     /* ==== HERO ==== */
     .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-    .hero-video wistia-player{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;filter:blur(5px) brightness(0.5);}
+    .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;}
+    .hero-video iframe{width:100%;height:100%;object-fit:cover;filter:blur(5px) brightness(0.5);}
     .hero-overlay{z-index:2;max-width:700px;}
     .hero-overlay h1{font-size:2.5rem;margin-bottom:15px;}
     .hero-overlay p{font-size:1.1rem;color:#ddd;}
@@ -150,15 +144,20 @@
   <!-- Hero -->
   <section class="hero" id="top">
     <div class="hero-video">
-      <script src="https://fast.wistia.com/player.js" async></script>
-      <script src="https://fast.wistia.com/embed/yb61lm701j.js" async type="module"></script>
-      <style>
-        wistia-player[media-id='yb61lm701j']:not(:defined){
-          background:center / cover no-repeat url('https://fast.wistia.com/embed/medias/yb61lm701j/swatch');
-          display:block;filter:blur(5px);padding-top:177.78%;
-        }
-      </style>
-      <wistia-player media-id="yb61lm701j" aspect="0.5625"></wistia-player>
+      <!-- Substituí o player do Wistia por um iframe com configurações específicas -->
+      <iframe 
+        src="https://fast.wistia.net/embed/iframe/yb61lm701j?videoFoam=true&autoplay=true&loop=true&muted=true&playbar=false&controlsVisibleOnLoad=false&playButton=false&volumeControl=false&fullscreenButton=false"
+        title="Background Video"
+        allow="autoplay; fullscreen"
+        allowtransparency="true"
+        frameborder="0"
+        scrolling="no"
+        class="wistia_embed"
+        name="wistia_embed"
+        msallowfullscreen
+        width="100%"
+        height="100%">
+      </iframe>
     </div>
 
     <div class="hero-overlay container">
@@ -212,24 +211,15 @@
           <li><strong class="count" data-target="98">0</strong><span>% Satisfação</span></li>
         </ul>
 
-
-          <!-- Redes Sociais -->
-
-    <!-- Certifique-se de ter o Font Awesome no seu <head> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<div class="socials">
-  <a href="https://instagram.com/fotografaisa" target="_blank" rel="noopener noreferrer">
-    <center><i class="fab fa-instagram"></i></center>
-  </a>
-  <a href="https://wa.me/5521971413317" target="_blank" rel="noopener noreferrer">
-    <center><i class="fab fa-whatsapp"></i> </center>
-  </a>
-</div>
-
-
-
-        
+        <!-- Redes Sociais -->
+        <div class="socials">
+          <a href="https://instagram.com/fotografaisa" target="_blank" rel="noopener noreferrer" class="instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/5521971413317" target="_blank" rel="noopener noreferrer" class="whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -332,6 +322,15 @@
 
     // ==== ANO RODAPÉ ====
     document.getElementById('year').textContent=new Date().getFullYear();
+
+    // ==== CONFIGURAÇÃO DO VÍDEO WISTIA ====
+    // Carrega o script do Wistia de forma síncrona para garantir que o vídeo carregue com a página
+    document.addEventListener('DOMContentLoaded', function() {
+      const wistiaScript = document.createElement('script');
+      wistiaScript.src = 'https://fast.wistia.com/assets/external/E-v1.js';
+      wistiaScript.async = false; // Carregamento síncrono
+      document.head.appendChild(wistiaScript);
+    });
   </script>
 </body>
 </html>
