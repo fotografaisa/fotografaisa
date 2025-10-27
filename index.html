@@ -1,199 +1,218 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fotografa Isa — Fotografia & Videomaker</title>
-  <meta name="description" content="Fotografia e videomaker para eventos, ensaios e produções. Agende sua sessão." />
-  <link rel="icon" href="https://github.com/fotografaisa/fotografaisa/raw/main/logoIsamaker.png" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isa Maker | Fotografia e Vídeo</title>
+<style>
+/* ====== RESET ====== */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+body,html {height:100%; scroll-behavior:smooth; background:#000; color:#fff;}
+
+/* ====== HEADER ====== */
+header {
+  position:fixed; top:0; left:0; width:100%;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px 60px; z-index:1000;
+  background:rgba(0,0,0,0.4); backdrop-filter:blur(10px);
+}
+header img {height:50px;}
+header nav a {
+  color:#fff; text-decoration:none; margin:0 15px;
+  font-weight:500; transition:color .3s;
+}
+header nav a:hover {color:#ff6699;}
+
+/* ====== HERO VIDEO ====== */
+.hero {
+  position:relative; height:100vh; overflow:hidden; display:flex;
+  align-items:center; justify-content:center; text-align:center;
+}
+.hero wistia-player {
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  z-index:-1; filter:blur(5px) brightness(0.6);
+}
+.hero-content {
+  z-index:2; max-width:700px; padding:20px;
+}
+.hero-content h1 {
+  font-size:3rem; color:#fff; margin-bottom:20px;
+  text-shadow:0 2px 10px rgba(0,0,0,0.7);
+}
+.hero-content p {font-size:1.2rem; color:#ddd;}
+.hero-content a {
+  display:inline-block; margin-top:25px; padding:12px 30px;
+  background:#ff6699; color:#fff; border-radius:30px;
+  text-decoration:none; font-weight:600; transition:0.3s;
+}
+.hero-content a:hover {background:#ff3366;}
+
+/* ====== ABOUT ====== */
+.about {
+  padding:100px 10%; text-align:center; background:#111;
+}
+.about h2 {font-size:2.2rem; margin-bottom:20px;}
+.about p {font-size:1.1rem; color:#ccc; line-height:1.7;}
+
+/* ====== PORTFOLIO SLIDER ====== */
+.portfolio {padding:100px 5%; background:#000;}
+.portfolio h2 {text-align:center; margin-bottom:40px;}
+.slider {
+  display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+  gap:20px; scrollbar-width:none;
+}
+.slider::-webkit-scrollbar {display:none;}
+.slide {
+  flex:0 0 80%; max-width:600px;
+  height:350px; background:#222; border-radius:20px;
+  overflow:hidden; scroll-snap-align:center;
+}
+.slide img {width:100%; height:100%; object-fit:cover;}
+
+/* ====== COUNTERS ====== */
+.stats {
+  background:#111; display:flex; justify-content:center; gap:60px;
+  padding:80px 20px; flex-wrap:wrap;
+}
+.stat {
+  text-align:center;
+}
+.stat h3 {
+  font-size:3rem; color:#ff6699; margin-bottom:10px;
+}
+.stat p {color:#ccc; font-size:1rem;}
+
+/* ====== AGENDAMENTO ====== */
+.contact {
+  background:#000; text-align:center; padding:100px 20px;
+}
+.contact h2 {margin-bottom:20px;}
+.contact form {
+  display:flex; flex-direction:column; align-items:center;
+  max-width:400px; margin:auto;
+}
+.contact input, .contact textarea {
+  width:100%; padding:12px; margin:8px 0; border:none;
+  border-radius:8px; background:#222; color:#fff;
+}
+.contact button {
+  background:#ff6699; border:none; padding:12px 30px;
+  border-radius:30px; font-size:1rem; cursor:pointer;
+  transition:0.3s; color:#fff;
+}
+.contact button:hover {background:#ff3366;}
+
+/* ====== FOOTER ====== */
+footer {
+  background:#111; text-align:center; padding:20px;
+  font-size:0.9rem; color:#aaa;
+}
+@media (max-width:768px){
+  header {padding:15px 25px;}
+  .hero-content h1 {font-size:2rem;}
+  .stats {gap:30px;}
+}
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#">
-        <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png" alt="Logo Fotografa Isa" class="logo"/>
-      </a>
-      <nav class="nav" id="mainNav">
-        <a href="#portfolio">Portfólio</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-        <button class="btn btn-primary" id="btnAgendar">Agendar</button>
-      </nav>
+<header>
+  <img src="logoIsamaker.png" alt="Isa Maker Logo">
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#contato">Agendamento</a>
+  </nav>
+</header>
 
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu">≡</button>
-    </div>
-  </header>
+<section class="hero" id="home">
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/yb61lm701j.js" async type="module"></script>
+  <style>
+  wistia-player[media-id='yb61lm701j']:not(:defined) {
+    background: center / cover no-repeat url('https://fast.wistia.com/embed/medias/yb61lm701j/swatch');
+    display: block; filter: blur(5px); padding-top:177.78%;
+  }
+  </style>
+  <wistia-player media-id="yb61lm701j" aspect="0.5625"></wistia-player>
 
-  <!-- Hero -->
-  <section class="hero" id="top">
-    <!-- Wistia embed (fornecido) -->
-    <div class="hero-video">
-      <script src="https://fast.wistia.com/player.js" async></script>
-      <script src="https://fast.wistia.com/embed/yb61lm701j.js" async type="module"></script>
-      <style>wistia-player[media-id='yb61lm701j']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/yb61lm701j/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style>
-      <wistia-player media-id="yb61lm701j" aspect="0.5625"></wistia-player>
-    </div>
+  <div class="hero-content">
+    <h1>Fotografia e Vídeo Profissional</h1>
+    <p>Transforme momentos únicos em memórias eternas com o olhar criativo de Isa Maker.</p>
+    <a href="#contato">Agende seu ensaio</a>
+  </div>
+</section>
 
-    <div class="hero-overlay container">
-      <h1>Transformando momentos em memórias eternas</h1>
-      <p class="sub">Fotografia e videomaker profissional — eventos, ensaios e produções personalizadas.</p>
-      <div class="hero-actions">
-        <a href="#contato" class="btn btn-ghost">Agendar agora</a>
-        <a href="#portfolio" class="btn">Ver portfólio</a>
-      </div>
-    </div>
-  </section>
+<section class="about" id="sobre">
+  <h2>Sobre Isa Maker</h2>
+  <p>Com anos de experiência em fotografia e produção audiovisual, Isa Maker captura a essência de cada momento — seja em eventos, ensaios ou produções comerciais. Criatividade, técnica e emoção se unem em cada clique.</p>
+</section>
 
-  <!-- Portfolio / Slider -->
-  <section class="section" id="portfolio">
-    <div class="container">
-      <h2>Portfólio</h2>
-      <p class="muted">Uma seleção de trabalhos recentes — toque para pausar cada vídeo.</p>
+<section class="portfolio" id="portfolio">
+  <h2>Portfólio</h2>
+  <div class="slider">
+    <div class="slide"><img src="https://picsum.photos/id/1015/800/500" alt=""></div>
+    <div class="slide"><img src="https://picsum.photos/id/1016/800/500" alt=""></div>
+    <div class="slide"><img src="https://picsum.photos/id/1021/800/500" alt=""></div>
+    <div class="slide"><img src="https://picsum.photos/id/1031/800/500" alt=""></div>
+  </div>
+</section>
 
-      <div class="carousel" id="carousel">
-        <button class="carousel-nav left" data-dir="-1" aria-label="slide anterior">‹</button>
-        <div class="carousel-track" id="carouselTrack">
-          <!-- slides gerados automaticamente (fotos + vídeos placeholders) -->
-          <div class="slide">
-            <img src="https://picsum.photos/1200/800?random=101" alt="Evento 1" />
-            <div class="slide-caption">Casamento - 2025</div>
-          </div>
-          <div class="slide">
-            <img src="https://picsum.photos/1200/800?random=102" alt="Evento 2" />
-            <div class="slide-caption">Ensaios - Urbano</div>
-          </div>
-          <div class="slide">
-            <video controls src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" preload="metadata"></video>
-            <div class="slide-caption">Bastidores - Making of</div>
-          </div>
-          <div class="slide">
-            <img src="https://picsum.photos/1200/800?random=103" alt="Evento 4" />
-            <div class="slide-caption">Aniversário - Infantil</div>
-          </div>
-        </div>
-        <button class="carousel-nav right" data-dir="1" aria-label="próximo slide">›</button>
-      </div>
+<section class="stats">
+  <div class="stat">
+    <h3 id="clientes">0</h3>
+    <p>Clientes Atendidos</p>
+  </div>
+  <div class="stat">
+    <h3 id="eventos">0</h3>
+    <p>Eventos Registrados</p>
+  </div>
+  <div class="stat">
+    <h3 id="satisfacao">0</h3>
+    <p>Clientes Satisfeitos</p>
+  </div>
+</section>
 
-    </div>
-  </section>
+<section class="contact" id="contato">
+  <h2>Agende seu Ensaio</h2>
+  <form>
+    <input type="text" placeholder="Seu nome" required>
+    <input type="email" placeholder="Seu e-mail" required>
+    <input type="tel" placeholder="Seu telefone" required>
+    <textarea rows="4" placeholder="Descreva o tipo de ensaio desejado"></textarea>
+    <button type="submit">Enviar Pedido</button>
+  </form>
+</section>
 
-  <!-- Services -->
-  <section class="section alt" id="servicos">
-    <div class="container grid-3">
-      <div class="card">
-        <h3>Casamentos</h3>
-        <p>Cobertura completa — fotos e vídeo documental. Entregas rápidas e tratamento profissional.</p>
-      </div>
-      <div class="card">
-        <h3>Ensaios</h3>
-        <p>Ensaios externos e estúdio. Direção criativa e edição personalizada.</p>
-      </div>
-      <div class="card">
-        <h3>Eventos Corporativos</h3>
-        <p>Vídeos institucionais, highlights e imagens para redes sociais.</p>
-      </div>
-    </div>
-  </section>
+<footer>
+  © 2025 Isa Maker | Fotografia & Vídeo - Todos os direitos reservados.
+</footer>
 
-  <!-- About -->
-  <section class="section" id="sobre">
-    <div class="container about-grid">
-      <div class="about-photo">
-        <img src="https://picsum.photos/640/640?random=200" alt="Fotografa Isa" />
-      </div>
-      <div>
-        <h2>Sobre Isa</h2>
-        <p class="muted">Com olhar sensível e experiência em documentar grandes momentos, Isa transforma cenas em narrativas visuais. Trabalha em casamentos, eventos, ensaios e produções comerciais.</p>
-        <ul class="stats">
-          <li><strong class="count" data-target="320">0</strong><span>Clientes</span></li>
-          <li><strong class="count" data-target="850">0</strong><span>Fotos entregues</span></li>
-          <li><strong class="count" data-target="120">0</strong><span>Eventos</span></li>
-          <li><strong class="count" data-target="98">0</strong><span>% Satisfação</span></li>
-        </ul>
+<script>
+// ====== CONTADORES ======
+function animateCounter(id, endValue, duration) {
+  let start = 0;
+  const element = document.getElementById(id);
+  const stepTime = Math.abs(Math.floor(duration / endValue));
 
-        <div class="socials">
-          <a href="https://instagram.com/fotografaisa" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  const timer = setInterval(() => {
+    start += 1;
+    element.textContent = start;
+    if (start >= endValue) clearInterval(timer);
+  }, stepTime);
+}
 
-  <!-- Testimonials (simple carousel of quotes) -->
-  <section class="section alt" id="testemunhos">
-    <div class="container">
-      <h2>O que clientes dizem</h2>
-      <div class="testi-wrap" id="testiWrap">
-        <blockquote class="testi active">"Profissionalismo impecável. As fotos ficaram incríveis e o vídeo emocionou todo mundo." <footer>— Cliente A</footer></blockquote>
-        <blockquote class="testi">"Entrega rápida e atenção aos detalhes. Recomendadíssima!" <footer>— Cliente B</footer></blockquote>
-        <blockquote class="testi">"Trabalhar com Isa foi muito tranquilo — captou todos os momentos importantes." <footer>— Cliente C</footer></blockquote>
-      </div>
-    </div>
-  </section>
+window.addEventListener('scroll', () => {
+  const stats = document.querySelector('.stats');
+  const rect = stats.getBoundingClientRect();
+  if (rect.top < window.innerHeight && !stats.classList.contains('animated')) {
+    stats.classList.add('animated');
+    animateCounter('clientes', 320, 2000);
+    animateCounter('eventos', 180, 2000);
+    animateCounter('satisfacao', 315, 2000);
+  }
+});
+</script>
 
-  <!-- Contact / Booking -->
-  <section class="section" id="contato">
-    <div class="container contact-grid">
-      <div class="contact-card">
-        <h2>Agende sua sessão</h2>
-        <p class="muted">Preencha o formulário e iremos confirmar a disponibilidade em até 48h.</p>
-
-        <form id="bookingForm">
-          <div class="form-row">
-            <input type="text" name="name" id="name" placeholder="Nome completo" required />
-            <input type="tel" name="phone" id="phone" placeholder="WhatsApp (ex: 55 11 9xxxx-xxxx)" required />
-          </div>
-          <div class="form-row">
-            <input type="email" name="email" id="email" placeholder="E-mail" required />
-            <select name="type" id="type" required>
-              <option value="">Tipo de evento</option>
-              <option>Casamento</option>
-              <option>Ensaios</option>
-              <option>Aniversário</option>
-              <option>Corporativo</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <input type="date" name="date" id="date" />
-            <input type="time" name="time" id="time" />
-          </div>
-          <textarea name="message" id="message" rows="4" placeholder="Conte um pouco sobre o evento / horário / local"></textarea>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Enviar Pedido de Agendamento</button>
-            <a class="btn btn-ghost" href="mailto:contato@fotografaisa.com?subject=Pedido%20de%20Agendamento">Enviar por E-mail</a>
-          </div>
-          <p class="form-note">* Este formulário usa um endpoint de exemplo. Substitua pelo seu serviço (Formspree, Netlify Forms, EmailJS ou seu backend).</p>
-        </form>
-      </div>
-
-      <div class="contact-info">
-        <h3>Contato rápido</h3>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5511999999999">+55 11 9xxxx-xxxx</a></p>
-        <p><strong>Instagram:</strong> <a href="https://instagram.com/fotografaisa">@fotografaisa</a></p>
-        <p><strong>Local:</strong> Rio de Janeiro, RJ</p>
-
-        <div class="mini-gallery">
-          <img src="https://picsum.photos/320/240?random=11" alt="">
-          <img src="https://picsum.photos/320/240?random=12" alt="">
-          <img src="https://picsum.photos/320/240?random=13" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <small>© <span id="year"></span> Fotografa Isa — Todos os direitos reservados.</small>
-      <small>Desenvolvido por Anderson Caetano</small>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
-
