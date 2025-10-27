@@ -77,6 +77,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 100px; /* Espaço para a barra fixa */
     }
 
     body {
@@ -85,6 +86,7 @@
       background: var(--dark);
       line-height: 1.7;
       overflow-x: hidden;
+      padding-top: 80px; /* Espaço para o header fixo */
     }
 
     img, video {
@@ -212,6 +214,17 @@
       box-shadow: var(--shadow-lg);
     }
 
+    .btn-instagram {
+      background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-instagram:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
     /* ==== LAYOUT ==== */
     .container {
       width: 90%;
@@ -316,6 +329,7 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
+      margin-top: -80px; /* Compensa o padding do body */
     }
 
     .hero-video {
@@ -337,6 +351,7 @@
     .hero-overlay {
       max-width: 900px;
       z-index: 1;
+      padding-top: 80px; /* Espaço extra para não ficar atrás do header */
     }
 
     .hero h1 {
@@ -417,14 +432,16 @@
       box-shadow: var(--shadow-lg);
     }
 
-    .portfolio-item img {
+    .portfolio-item img,
+    .portfolio-item video {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: var(--transition);
     }
 
-    .portfolio-item:hover img {
+    .portfolio-item:hover img,
+    .portfolio-item:hover video {
       transform: scale(1.1);
     }
 
@@ -575,6 +592,15 @@
       display: block;
     }
 
+    /* Centralizar e espaçar redes sociais */
+    .socials-centralizadas {
+      display: flex;
+      justify-content: center;
+      gap: 30px; /* 2 dedos de espaço */
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
     /* ==== DEPOIMENTOS ==== */
     .testimonials-slider {
       position: relative;
@@ -589,6 +615,11 @@
       box-shadow: var(--shadow);
       text-align: center;
       position: relative;
+      display: none;
+    }
+
+    .testimonial.active {
+      display: block;
     }
 
     .testimonial::before {
@@ -844,6 +875,12 @@
       .section {
         padding: 70px 0;
       }
+
+      .socials-centralizadas {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
     }
 
     /* ==== COMPONENTES ESPECIAIS ==== */
@@ -951,6 +988,7 @@
         height="100%">
       </iframe>
     </div>
+    
     <div class="hero-overlay container">
       <span class="badge">Fotógrafa & Videomaker Profissional</span>
       <h1>Transformando momentos em memórias eternas</h1>
@@ -974,32 +1012,32 @@
           <div class="highlight-icon">
             <i class="fas fa-camera"></i>
           </div>
-          <h3>+850 Fotos</h3>
-          <p>Entregues com excelência</p>
+          <h3><span class="stat-number" data-target="850">0</span>+</h3>
+          <p>Fotos Entregues</p>
         </div>
         
         <div class="highlight-card">
           <div class="highlight-icon">
             <i class="fas fa-users"></i>
           </div>
-          <h3>+320 Clientes</h3>
-          <p>Satisfeitos com meu trabalho</p>
+          <h3><span class="stat-number" data-target="320">0</span>+</h3>
+          <p>Clientes Satisfeitos</p>
         </div>
         
         <div class="highlight-card">
           <div class="highlight-icon">
             <i class="fas fa-calendar-alt"></i>
           </div>
-          <h3>+120 Eventos</h3>
-          <p>Realizados com sucesso</p>
+          <h3><span class="stat-number" data-target="120">0</span>+</h3>
+          <p>Eventos Realizados</p>
         </div>
         
         <div class="highlight-card">
           <div class="highlight-icon">
             <i class="fas fa-star"></i>
           </div>
-          <h3>98% Satisfação</h3>
-          <p>Avaliação dos clientes</p>
+          <h3><span class="stat-number" data-target="98">0</span>%</h3>
+          <p>Avaliação Positiva</p>
         </div>
       </div>
     </div>
@@ -1032,10 +1070,14 @@
         </div>
         
         <div class="portfolio-item">
-          <img src="https://picsum.photos/600/800?random=3" alt="Ensaio Gestante">
+          <!-- Exemplo de vídeo no portfólio -->
+          <video controls poster="https://picsum.photos/600/800?random=7">
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+          </video>
           <div class="portfolio-overlay">
-            <span class="portfolio-category">Ensaio Gestante</span>
-            <h3>Maria & Família</h3>
+            <span class="portfolio-category">Vídeo</span>
+            <h3>Making Of - Casamento</h3>
           </div>
         </div>
         
@@ -1059,7 +1101,7 @@
           <img src="https://picsum.photos/600/800?random=6" alt="15 Anos">
           <div class="portfolio-overlay">
             <span class="portfolio-category">15 Anos</span>
-            <h3>Festinha de Aniversário</h3>
+            <h3>Festa de Aniversário</h3>
           </div>
         </div>
       </div>
@@ -1118,17 +1160,34 @@
         
         <div class="service-card">
           <div class="service-icon">
-            <i class="fas fa-briefcase"></i>
+            <i class="fas fa-birthday-cake"></i>
           </div>
-          <h3>Eventos Corporativos</h3>
-          <p>Registro profissional para empresas: eventos, produtos, equipes e conteúdo para redes sociais</p>
+          <h3>Aniversários</h3>
+          <p>Registro completo de festas de aniversário, especialmente 15 anos, com ensaio prévio</p>
+          <div class="service-price">A partir de R$ 800</div>
+          <ul class="service-features">
+            <li>Ensaio de preparação</li>
+            <li>Cobertura da festa (até 5h)</li>
+            <li>Fotos dos convidados</li>
+            <li>Momento do parabéns</li>
+            <li>+80 fotos editadas</li>
+          </ul>
+          <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-glass-cheers"></i>
+          </div>
+          <h3>Outros Eventos</h3>
+          <p>Formaturas, bodas, pré-wedding, eventos corporativos e celebrações especiais</p>
           <div class="service-price">Sob Consulta</div>
           <ul class="service-features">
-            <li>Fotos para redes sociais</li>
-            <li>Vídeos institucionais</li>
-            <li>Cobertura de eventos</li>
-            <li>Fotos de produtos</li>
-            <li>Retratos corporativos</li>
+            <li>Formaturas e colações de grau</li>
+            <li>Bodas de casamento</li>
+            <li>Sessão pré-wedding</li>
+            <li>Eventos corporativos</li>
+            <li>Celebrações familiares</li>
           </ul>
           <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
         </div>
@@ -1169,8 +1228,9 @@
             </div>
           </div>
           
-          <div class="socials">
-            <a href="https://instagram.com/fotografaisa" class="btn btn-secondary" target="_blank">
+          <!-- Redes sociais centralizadas com cores originais e espaçadas -->
+          <div class="socials-centralizadas">
+            <a href="https://instagram.com/fotografaisa" class="btn btn-instagram" target="_blank">
               <i class="fab fa-instagram"></i> Instagram
             </a>
             <a href="https://wa.me/5521971413317" class="btn btn-whatsapp" target="_blank">
@@ -1192,6 +1252,7 @@
       </div>
       
       <div class="testimonials-slider">
+        <!-- Depoimento 1 - Casamento -->
         <div class="testimonial active">
           <div class="testimonial-rating">
             <i class="fas fa-star"></i>
@@ -1206,6 +1267,82 @@
             <div>
               <h4>Mariana Silva</h4>
               <p>Noiva</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 2 - 15 Anos -->
+        <div class="testimonial">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"Minha festa de 15 anos foi perfeita e a Isa capturou cada detalhe! As fotos ficaram maravilhosas e o vídeo emocionou toda minha família. Ela tem um talento incrível para fazer a gente se sentir à vontade!"</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Cliente" class="testimonial-avatar">
+            <div>
+              <h4>Juliana Santos</h4>
+              <p>Aniversariante 15 anos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 3 - Formatura -->
+        <div class="testimonial">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"Contratei a Isa para minha formatura em Medicina e não me arrependo! As fotos ficaram incríveis e ela conseguiu capturar a emoção desse momento tão especial. Profissionalismo e talento!"</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Cliente" class="testimonial-avatar">
+            <div>
+              <h4>Carlos Eduardo</h4>
+              <p>Formando em Medicina</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 4 - Pré-Wedding -->
+        <div class="testimonial">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"Fizemos o ensaio pré-wedding com a Isa e foi uma experiência incrível! Ela nos orientou com poses naturais e as fotos ficaram exatamente como imaginávamos. Recomendo de olhos fechados!"</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Cliente" class="testimonial-avatar">
+            <div>
+              <h4>Camila e Rafael</h4>
+              <p>Noivos - Pré-Wedding</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 5 - Bodas -->
+        <div class="testimonial">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"Para nossas bodas de prata, a Isa recriou a magia do nosso casamento. As fotos transmitem todo o amor e história que construímos nesses 25 anos. Obrigada por eternizar esse momento!"</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/66.jpg" alt="Cliente" class="testimonial-avatar">
+            <div>
+              <h4>Ana e Roberto</h4>
+              <p>Bodas de Prata - 25 anos</p>
             </div>
           </div>
         </div>
@@ -1265,38 +1402,42 @@
           </div>
           
           <div class="socials">
-            <center><a href="https://instagram.com/fotografaisa" class="btn btn-secondary" target="_blank">
+            <a href="https://instagram.com/fotografaisa" class="btn btn-instagram" target="_blank">
               <i class="fab fa-instagram"></i> Siga no Instagram
-            </a></center>
+            </a>
           </div>
         </div>
         
         <div class="contact-form">
           <form id="contactForm">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Seu nome completo" required>
+              <input type="text" class="form-control" id="nome" placeholder="Seu nome completo" required>
             </div>
             
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Seu e-mail" required>
+              <input type="email" class="form-control" id="email" placeholder="Seu e-mail" required>
             </div>
             
             <div class="form-group">
-              <input type="tel" class="form-control" placeholder="Seu WhatsApp">
+              <input type="tel" class="form-control" id="whatsapp" placeholder="Seu WhatsApp">
             </div>
             
             <div class="form-group">
-              <select class="form-control" required>
+              <select class="form-control" id="servico" required>
                 <option value="" disabled selected>Selecione o serviço</option>
                 <option value="casamento">Casamento</option>
                 <option value="ensaio">Ensaio Fotográfico</option>
+                <option value="aniversario">Aniversário</option>
+                <option value="formatura">Formatura</option>
+                <option value="pre-wedding">Pré-Wedding</option>
+                <option value="bodas">Bodas</option>
                 <option value="corporativo">Evento Corporativo</option>
                 <option value="outro">Outro</option>
               </select>
             </div>
             
             <div class="form-group">
-              <textarea class="form-control" placeholder="Conte-me mais sobre sua ideia..." required></textarea>
+              <textarea class="form-control" id="mensagem" placeholder="Conte-me mais sobre sua ideia..." required></textarea>
             </div>
             
             <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -1339,9 +1480,9 @@
           <ul>
             <li><a href="#servicos">Casamentos</a></li>
             <li><a href="#servicos">Ensaios Fotográficos</a></li>
+            <li><a href="#servicos">Aniversários</a></li>
+            <li><a href="#servicos">Formaturas</a></li>
             <li><a href="#servicos">Eventos Corporativos</a></li>
-            <li><a href="#servicos">15 Anos</a></li>
-            <li><a href="#servicos">Ensaios Gestante</a></li>
           </ul>
         </div>
         
@@ -1369,41 +1510,6 @@
     </a>
   </div>
 
-  <!-- Modal de Agendamento -->
-  <div class="modal" id="bookingModal">
-    <div class="modal-content">
-      <button class="close-modal" id="closeModal">&times;</button>
-      <h3>Agendar Sessão</h3>
-      <p>Preencha os dados abaixo para agendar sua sessão fotográfica:</p>
-      <form>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Nome completo" required>
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" placeholder="E-mail" required>
-        </div>
-        <div class="form-group">
-          <input type="tel" class="form-control" placeholder="WhatsApp" required>
-        </div>
-        <div class="form-group">
-          <select class="form-control" required>
-            <option value="" disabled selected>Tipo de sessão</option>
-            <option value="casamento">Casamento</option>
-            <option value="ensaio-casal">Ensaio de Casal</option>
-            <option value="ensaio-familia">Ensaio de Família</option>
-            <option value="ensaio-gestante">Ensaio Gestante</option>
-            <option value="15-anos">15 Anos</option>
-            <option value="corporativo">Evento Corporativo</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <input type="date" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Solicitar Agendamento</button>
-      </form>
-    </div>
-  </div>
-
   <script>
     // ==== ANIMAÇÃO DE SCROLL DO HEADER ====
     window.addEventListener('scroll', function() {
@@ -1423,12 +1529,9 @@
       nav.classList.toggle('active');
     });
 
-    // ==== CONTADORES ANIMADOS ====
-    const counters = document.querySelectorAll('.stat-number');
-    let started = false;
-
+    // ==== CONTADORES ANIMADOS NAS ESTATÍSTICAS ====
     function startCounters() {
-      if (started) return;
+      const counters = document.querySelectorAll('.stat-number');
       
       counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
@@ -1447,59 +1550,64 @@
         
         updateCounter();
       });
-      
-      started = true;
     }
 
-    // Verifica quando a seção sobre está visível
-    const aboutSection = document.getElementById('sobre');
+    // Iniciar contadores quando a seção de destaques estiver visível
+    const highlightsSection = document.querySelector('.highlights');
     
-    function checkScroll() {
-      const sectionTop = aboutSection.getBoundingClientRect().top;
+    function checkScrollForCounters() {
+      const sectionTop = highlightsSection.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
       
       if (sectionTop < windowHeight - 100) {
         startCounters();
+        window.removeEventListener('scroll', checkScrollForCounters);
       }
     }
 
-    window.addEventListener('scroll', checkScroll);
-    window.addEventListener('load', checkScroll);
+    // Iniciar contadores quando a página carregar se a seção já estiver visível
+    window.addEventListener('load', checkScrollForCounters);
+    window.addEventListener('scroll', checkScrollForCounters);
 
-    // ==== MODAL ====
-    const bookingModal = document.getElementById('bookingModal');
-    const closeModal = document.getElementById('closeModal');
-    const agendarButtons = document.querySelectorAll('#btnAgendar, .btn-agendar');
+    // ==== ROTAÇÃO DE DEPOIMENTOS ====
+    const testimonials = document.querySelectorAll('.testimonial');
+    let currentTestimonial = 0;
 
-    agendarButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        bookingModal.classList.add('active');
-      });
-    });
+    function showNextTestimonial() {
+      testimonials[currentTestimonial].classList.remove('active');
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      testimonials[currentTestimonial].classList.add('active');
+    }
 
-    closeModal.addEventListener('click', () => {
-      bookingModal.classList.remove('active');
-    });
+    // Mudar depoimento a cada 5 segundos
+    setInterval(showNextTestimonial, 5000);
 
-    // Fechar modal ao clicar fora
-    window.addEventListener('click', (e) => {
-      if (e.target === bookingModal) {
-        bookingModal.classList.remove('active');
-      }
-    });
-
-    // ==== ANO ATUAL NO FOOTER ====
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ==== FORMULÁRIO DE CONTATO ====
+    // ==== FORMULÁRIO QUE ENVIA DIRETO PARA O WHATSAPP ====
     const contactForm = document.getElementById('contactForm');
     
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Simulação de envio
-      alert('Obrigada pelo seu interesse! Entrarei em contato em breve.');
+      // Coletar dados do formulário
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const whatsapp = document.getElementById('whatsapp').value;
+      const servico = document.getElementById('servico').value;
+      const mensagem = document.getElementById('mensagem').value;
+      
+      // Montar mensagem para WhatsApp
+      const texto = `Olá Isa! Gostaria de solicitar um orçamento:\n\n*Nome:* ${nome}\n*E-mail:* ${email}\n*WhatsApp:* ${whatsapp}\n*Serviço:* ${servico}\n*Mensagem:* ${mensagem}`;
+      
+      // Codificar a mensagem para URL
+      const mensagemCodificada = encodeURIComponent(texto);
+      
+      // Número do WhatsApp
+      const numeroWhatsApp = '5521971413317';
+      
+      // Redirecionar para o WhatsApp
+      window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`, '_blank');
+      
+      // Limpar formulário
       contactForm.reset();
     });
 
@@ -1514,7 +1622,7 @@
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 80,
+            top: targetElement.offsetTop - 100, // Compensa o header fixo
             behavior: 'smooth'
           });
           
@@ -1525,6 +1633,9 @@
         }
       });
     });
+
+    // ==== ANO ATUAL NO FOOTER ====
+    document.getElementById('year').textContent = new Date().getFullYear();
 
     // ==== CARREGAMENTO DO WISTIA ====
     document.addEventListener('DOMContentLoaded', function() {
