@@ -1,1 +1,199 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fotografa Isa — Fotografia & Videomaker</title>
+  <meta name="description" content="Fotografia e videomaker para eventos, ensaios e produções. Agende sua sessão." />
+  <link rel="icon" href="https://github.com/fotografaisa/fotografaisa/raw/main/logoIsamaker.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png" alt="Logo Fotografa Isa" class="logo"/>
+      </a>
+      <nav class="nav" id="mainNav">
+        <a href="#portfolio">Portfólio</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <button class="btn btn-primary" id="btnAgendar">Agendar</button>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">≡</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <!-- Wistia embed (fornecido) -->
+    <div class="hero-video">
+      <script src="https://fast.wistia.com/player.js" async></script>
+      <script src="https://fast.wistia.com/embed/yb61lm701j.js" async type="module"></script>
+      <style>wistia-player[media-id='yb61lm701j']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/yb61lm701j/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style>
+      <wistia-player media-id="yb61lm701j" aspect="0.5625"></wistia-player>
+    </div>
+
+    <div class="hero-overlay container">
+      <h1>Transformando momentos em memórias eternas</h1>
+      <p class="sub">Fotografia e videomaker profissional — eventos, ensaios e produções personalizadas.</p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-ghost">Agendar agora</a>
+        <a href="#portfolio" class="btn">Ver portfólio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio / Slider -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <h2>Portfólio</h2>
+      <p class="muted">Uma seleção de trabalhos recentes — toque para pausar cada vídeo.</p>
+
+      <div class="carousel" id="carousel">
+        <button class="carousel-nav left" data-dir="-1" aria-label="slide anterior">‹</button>
+        <div class="carousel-track" id="carouselTrack">
+          <!-- slides gerados automaticamente (fotos + vídeos placeholders) -->
+          <div class="slide">
+            <img src="https://picsum.photos/1200/800?random=101" alt="Evento 1" />
+            <div class="slide-caption">Casamento - 2025</div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/1200/800?random=102" alt="Evento 2" />
+            <div class="slide-caption">Ensaios - Urbano</div>
+          </div>
+          <div class="slide">
+            <video controls src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" preload="metadata"></video>
+            <div class="slide-caption">Bastidores - Making of</div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/1200/800?random=103" alt="Evento 4" />
+            <div class="slide-caption">Aniversário - Infantil</div>
+          </div>
+        </div>
+        <button class="carousel-nav right" data-dir="1" aria-label="próximo slide">›</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section alt" id="servicos">
+    <div class="container grid-3">
+      <div class="card">
+        <h3>Casamentos</h3>
+        <p>Cobertura completa — fotos e vídeo documental. Entregas rápidas e tratamento profissional.</p>
+      </div>
+      <div class="card">
+        <h3>Ensaios</h3>
+        <p>Ensaios externos e estúdio. Direção criativa e edição personalizada.</p>
+      </div>
+      <div class="card">
+        <h3>Eventos Corporativos</h3>
+        <p>Vídeos institucionais, highlights e imagens para redes sociais.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="sobre">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <img src="https://picsum.photos/640/640?random=200" alt="Fotografa Isa" />
+      </div>
+      <div>
+        <h2>Sobre Isa</h2>
+        <p class="muted">Com olhar sensível e experiência em documentar grandes momentos, Isa transforma cenas em narrativas visuais. Trabalha em casamentos, eventos, ensaios e produções comerciais.</p>
+        <ul class="stats">
+          <li><strong class="count" data-target="320">0</strong><span>Clientes</span></li>
+          <li><strong class="count" data-target="850">0</strong><span>Fotos entregues</span></li>
+          <li><strong class="count" data-target="120">0</strong><span>Eventos</span></li>
+          <li><strong class="count" data-target="98">0</strong><span>% Satisfação</span></li>
+        </ul>
+
+        <div class="socials">
+          <a href="https://instagram.com/fotografaisa" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (simple carousel of quotes) -->
+  <section class="section alt" id="testemunhos">
+    <div class="container">
+      <h2>O que clientes dizem</h2>
+      <div class="testi-wrap" id="testiWrap">
+        <blockquote class="testi active">"Profissionalismo impecável. As fotos ficaram incríveis e o vídeo emocionou todo mundo." <footer>— Cliente A</footer></blockquote>
+        <blockquote class="testi">"Entrega rápida e atenção aos detalhes. Recomendadíssima!" <footer>— Cliente B</footer></blockquote>
+        <blockquote class="testi">"Trabalhar com Isa foi muito tranquilo — captou todos os momentos importantes." <footer>— Cliente C</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Booking -->
+  <section class="section" id="contato">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <h2>Agende sua sessão</h2>
+        <p class="muted">Preencha o formulário e iremos confirmar a disponibilidade em até 48h.</p>
+
+        <form id="bookingForm">
+          <div class="form-row">
+            <input type="text" name="name" id="name" placeholder="Nome completo" required />
+            <input type="tel" name="phone" id="phone" placeholder="WhatsApp (ex: 55 11 9xxxx-xxxx)" required />
+          </div>
+          <div class="form-row">
+            <input type="email" name="email" id="email" placeholder="E-mail" required />
+            <select name="type" id="type" required>
+              <option value="">Tipo de evento</option>
+              <option>Casamento</option>
+              <option>Ensaios</option>
+              <option>Aniversário</option>
+              <option>Corporativo</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <input type="date" name="date" id="date" />
+            <input type="time" name="time" id="time" />
+          </div>
+          <textarea name="message" id="message" rows="4" placeholder="Conte um pouco sobre o evento / horário / local"></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Enviar Pedido de Agendamento</button>
+            <a class="btn btn-ghost" href="mailto:contato@fotografaisa.com?subject=Pedido%20de%20Agendamento">Enviar por E-mail</a>
+          </div>
+          <p class="form-note">* Este formulário usa um endpoint de exemplo. Substitua pelo seu serviço (Formspree, Netlify Forms, EmailJS ou seu backend).</p>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h3>Contato rápido</h3>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5511999999999">+55 11 9xxxx-xxxx</a></p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/fotografaisa">@fotografaisa</a></p>
+        <p><strong>Local:</strong> Rio de Janeiro, RJ</p>
+
+        <div class="mini-gallery">
+          <img src="https://picsum.photos/320/240?random=11" alt="">
+          <img src="https://picsum.photos/320/240?random=12" alt="">
+          <img src="https://picsum.photos/320/240?random=13" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Fotografa Isa — Todos os direitos reservados.</small>
+      <small>Desenvolvido por Anderson Caetano</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
