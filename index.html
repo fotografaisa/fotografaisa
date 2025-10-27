@@ -1096,7 +1096,7 @@
           </div>
           <div class="portfolio-overlay">
             <span class="portfolio-category">Ensaio Fotográfico</span>
-            <h3>Making-of</h3>
+            <h3>Making-of da </h3>
           </div>
         </div>
 
@@ -1127,21 +1127,29 @@
 
         
         
-        <div class="portfolio-item">
-          <img src="https://picsum.photos/600/800?random=4" alt="Evento Corporativo">
+         <div class="portfolio-item">
+          <!-- Vídeo Wistia no formato estilo YouTube -->
+          <div class="wistia-player-container">
+            <script src="https://fast.wistia.com/player.js" async></script>
+            <script src="https://fast.wistia.com/embed/dyjwq5i615.js" async type="module"></script>
+            <style>
+              wistia-player[media-id='dyjwq5i615']:not(:defined) { 
+                background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/dyjwq5i615/swatch'); 
+                display: block; 
+                filter: blur(5px); 
+                padding-top: 177.78%; 
+              }
+            </style>
+            <wistia-player media-id="dyjwq5i615" aspect="0.5625"></wistia-player>
+          </div>
           <div class="portfolio-overlay">
-            <span class="portfolio-category">Evento</span>
-            <h3>Lançamento de Produto</h3>
+            <span class="portfolio-category">Baile de Inverno</span>
+            <h3>Ana comemora 15 anos</h3>
           </div>
         </div>
-        
-        <div class="portfolio-item">
-          <img src="https://picsum.photos/600/800?random=5" alt="Ensaio Casal">
-          <div class="portfolio-overlay">
-            <span class="portfolio-category">Ensaio Casal</span>
-            <h3>Ana & Pedro</h3>
-          </div>
-        </div>
+
+
+
         
         <div class="portfolio-item">
           <!-- Vídeo Wistia no formato estilo YouTube -->
