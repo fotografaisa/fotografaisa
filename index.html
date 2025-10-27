@@ -1083,18 +1083,31 @@
             <h3>Empresa XYZ</h3>
           </div>
         </div>
+
         
-        <div class="portfolio-item">
-          <!-- Exemplo de vídeo no portfólio -->
-          <video controls poster="https://picsum.photos/600/800?random=7">
-            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
+        
+            <div class="portfolio-item">
+          <!-- Vídeo Wistia no formato estilo YouTube -->
+          <div class="wistia-player-container">
+            <script src="https://fast.wistia.com/player.js" async></script>
+            <script src="https://fast.wistia.com/embed/m6sj7m7znf.js" async type="module"></script>
+            <style>
+              wistia-player[media-id='m6sj7m7znf']:not(:defined) { 
+                background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/m6sj7m7znf/swatch'); 
+                display: block; 
+                filter: blur(5px); 
+                padding-top: 177.78%; 
+              }
+            </style>
+            <wistia-player media-id="m6sj7m7znf" aspect="0.5625"></wistia-player>
+          </div>
           <div class="portfolio-overlay">
-            <span class="portfolio-category">Vídeo</span>
-            <h3>Making Of - Casamento</h3>
+            <span class="portfolio-category">Vídeo Profissional</span>
+            <h3>Pré-weeding - Ensaio de Casamento</h3>
           </div>
         </div>
+
+        
         
         <div class="portfolio-item">
           <img src="https://picsum.photos/600/800?random=4" alt="Evento Corporativo">
@@ -1132,6 +1145,9 @@
             <h3>Aniversário de 15 anos</h3>
           </div>
         </div>
+
+
+        
       </div>
       
       <div class="text-center" style="margin-top: 50px;">
