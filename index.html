@@ -1,150 +1,943 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fotografa Isa — Fotografia & Videomaker</title>
-  <meta name="description" content="Fotografia e videomaker para eventos, ensaios e produções. Agende sua sessão." />
-  <link rel="icon" href="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotografa Isa — Fotografia & Videomaker Profissional | Rio de Janeiro</title>
+  <meta name="description" content="Fotógrafa e videomaker profissional no Rio de Janeiro. Especialista em casamentos, ensaios, eventos corporativos e produções criativas. Transforme seus momentos em memórias eternas.">
+  <meta name="keywords" content="fotógrafa Rio de Janeiro, videomaker, casamentos, ensaios fotográficos, eventos corporativos, fotografia profissional">
+  <meta name="author" content="Fotografa Isa">
+  <link rel="icon" href="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fotografaisa.com/">
+  <meta property="og:title" content="Fotografa Isa — Fotografia & Videomaker Profissional">
+  <meta property="og:description" content="Transformando momentos em memórias eternas. Fotografia e videomaker profissional no Rio de Janeiro.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://fotografaisa.com/">
+  <meta property="twitter:title" content="Fotografa Isa — Fotografia & Videomaker Profissional">
+  <meta property="twitter:description" content="Transformando momentos em memórias eternas. Fotografia e videomaker profissional no Rio de Janeiro.">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png">
+
+  <!-- Schema.org markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fotografa Isa",
+    "image": "https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png",
+    "description": "Fotógrafa e videomaker profissional especializada em casamentos, ensaios e eventos no Rio de Janeiro",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rio de Janeiro",
+      "addressRegion": "RJ"
+    },
+    "telephone": "+5521971413317",
+    "openingHours": "Mo-Su 09:00-20:00",
+    "url": "https://fotografaisa.com/",
+    "priceRange": "R$",
+    "areaServed": "Rio de Janeiro e região"
+  }
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  
   <style>
-    /* ==== RESET ==== */
-    *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-    body{color:#fff;background:#000;line-height:1.6;}
-    img,video{max-width:100%;display:block;}
+    /* ==== VARIÁVEIS CSS ==== */
+    :root {
+      --primary: #ff3366;
+      --primary-dark: #e62e5c;
+      --secondary: #6a11cb;
+      --accent: #00c6ff;
+      --dark: #0a0a0a;
+      --dark-light: #1a1a1a;
+      --text: #ffffff;
+      --text-muted: #b0b0b0;
+      --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.4);
+      --radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
 
-    /* ==== REDES SOCIAIS ==== */
-    .socials {
+    /* ==== RESET & BASE ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: var(--dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ==== TIPOGRAFIA ==== */
+    h1, h2, h3, h4, h5 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-center h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* ==== BOTÕES ==== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient);
+      z-index: -1;
+      transition: var(--transition);
+    }
+
+    .btn:hover::before {
+      transform: scale(1.05);
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-whatsapp:hover {
+      background: #128C7E;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ==== LAYOUT ==== */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-alt {
+      background: var(--dark-light);
+    }
+
+    /* ==== HEADER ==== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+    }
+
+    .logo {
+      height: 50px;
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient);
+      transition: var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ==== HERO ==== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    .hero-video iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.4) blur(3px);
+    }
+
+    .hero-overlay {
+      max-width: 900px;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 1s ease 0.2s both;
+    }
+
+    .hero-actions {
       display: flex;
       gap: 15px;
       justify-content: center;
-      align-items: center;
-      margin-top: 10px;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease 0.4s both;
     }
 
-    .socials a {
+    /* ==== DESTAQUES ==== */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: -50px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .highlight-card {
+      background: var(--dark-light);
+      padding: 30px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .highlight-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      background: var(--gradient);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    /* ==== PORTFÓLIO ==== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px 20px 20px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+      transform: translateY(10px);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .portfolio-category {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    /* ==== SERVIÇOS ==== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--dark-light);
+      padding: 40px 30px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--gradient);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .service-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 15px 0;
+    }
+
+    .service-features {
+      list-style: none;
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    .service-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .service-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* ==== SOBRE ==== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+      gap: 50px;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: -20px;
+      bottom: -20px;
+      border: 3px solid var(--primary);
+      border-radius: var(--radius);
+      z-index: -1;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+
+    /* ==== DEPOIMENTOS ==== */
+    .testimonials-slider {
+      position: relative;
+      max-width: 800px;
+      margin: 50px auto 0;
+    }
+
+    .testimonial {
+      background: var(--dark-light);
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+    }
+
+    .testimonial::before {
+      content: '"';
+      font-size: 5rem;
+      color: var(--primary);
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      opacity: 0.3;
+    }
+
+    .testimonial-rating {
+      color: #ffc107;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .testimonial-avatar {
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      color: white;
-      font-size: 22px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-decoration: none;
+      object-fit: cover;
+      border: 3px solid var(--primary);
     }
-
-    /* Cores oficiais */
-    .socials a.instagram {
-      background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-    }
-
-    .socials a.whatsapp {
-      background-color: #25D366;
-    }
-
-    /* Hover */
-    .socials a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    /* ==== CONTAINERS ==== */
-    .container{width:90%;max-width:1200px;margin:auto;}
-    .section{padding:100px 0;}
-    .alt{background:#111;}
-
-    /* ==== HEADER ==== */
-    header{position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);z-index:1000;}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:15px 0;}
-    .logo{height:50px;}
-    nav a{color:#fff;margin:0 15px;text-decoration:none;transition:.3s;}
-    nav a:hover{color:#ff6699;}
-    .btn{background:#ff6699;border:none;color:#fff;padding:10px 20px;border-radius:30px;text-decoration:none;cursor:pointer;transition:.3s;}
-    .btn:hover{background:#ff3366;}
-    .btn-ghost{border:2px solid #ff6699;background:transparent;color:#ff6699;}
-    .btn-ghost:hover{background:#ff6699;color:#fff;}
-    .hamburger{display:none;font-size:2rem;background:none;border:none;color:#fff;cursor:pointer;}
-
-    /* ==== HERO ==== */
-    .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-    .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;}
-    .hero-video iframe{width:100%;height:100%;object-fit:cover;filter:blur(5px) brightness(0.5);}
-    .hero-overlay{z-index:2;max-width:700px;}
-    .hero-overlay h1{font-size:2.5rem;margin-bottom:15px;}
-    .hero-overlay p{font-size:1.1rem;color:#ddd;}
-    .hero-actions{margin-top:25px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-
-    /* ==== CAROUSEL ==== */
-    .carousel{position:relative;overflow:hidden;}
-    .carousel-track{display:flex;transition:transform .5s ease;}
-    .slide{min-width:100%;position:relative;}
-    .slide-caption{position:absolute;bottom:15px;left:15px;background:rgba(0,0,0,0.5);padding:10px;border-radius:5px;}
-    .carousel-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:2rem;cursor:pointer;padding:0 15px;z-index:2;}
-    .carousel-nav.left{left:10px;}
-    .carousel-nav.right{right:10px;}
-
-    /* ==== CARDS ==== */
-    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
-    .card{background:#000;padding:30px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.3);}
-    .card h3{margin-bottom:10px;color:#ff6699;}
-
-    /* ==== ABOUT ==== */
-    .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center;gap:40px;}
-    .stats{list-style:none;display:flex;flex-wrap:wrap;gap:20px;margin:20px 0;}
-    .stats li{text-align:center;}
-    .stats strong{display:block;font-size:2rem;color:#ff6699;}
-    .socials a{margin-right:15px;color:#ff6699;text-decoration:none;}
-    .socials a:hover{text-decoration:underline;}
-
-    /* ==== TESTEMUNHOS ==== */
-    .testi-wrap{position:relative;}
-    .testi{display:none;text-align:center;font-style:italic;max-width:700px;margin:auto;}
-    .testi.active{display:block;}
 
     /* ==== CONTATO ==== */
-    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
-    form input,form select,form textarea{width:100%;padding:10px;margin:8px 0;border:none;border-radius:5px;background:#222;color:#fff;}
-    .form-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
-    .mini-gallery{display:flex;gap:10px;margin-top:10px;}
-    .mini-gallery img{width:100px;height:70px;object-fit:cover;border-radius:5px;}
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .contact-form {
+      background: var(--dark-light);
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(255, 51, 102, 0.2);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
 
     /* ==== FOOTER ==== */
-    footer{background:#111;text-align:center;padding:20px;color:#aaa;font-size:0.9rem;}
-    footer small{display:block;}
+    footer {
+      background: var(--dark-light);
+      padding: 60px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo {
+      height: 50px;
+      margin-bottom: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .footer-links h4 {
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-links h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--gradient);
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 5px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ==== ANIMAÇÕES ==== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
 
     /* ==== RESPONSIVO ==== */
-    @media(max-width:768px){
-      nav{display:none;flex-direction:column;background:#111;position:absolute;top:70px;right:0;width:200px;padding:20px;}
-      nav.active{display:flex;}
-      .hamburger{display:block;}
+    @media (max-width: 992px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .header-actions {
+        display: none;
+      }
+
+      .highlights {
+        margin-top: 0;
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+    }
+
+    /* ==== COMPONENTES ESPECIAIS ==== */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+      animation: pulse 2s infinite;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--dark-light);
+      padding: 40px;
+      border-radius: var(--radius);
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-
   <!-- Header -->
-  <header class="site-header">
+  <header id="header">
     <div class="container header-inner">
       <a class="brand" href="#">
-        <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png" alt="Logo Fotografa Isa" class="logo"/>
+        <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png" alt="Fotografa Isa" class="logo">
       </a>
-      <nav class="nav" id="mainNav">
+      
+      <nav id="mainNav">
+        <a href="#home">Início</a>
         <a href="#portfolio">Portfólio</a>
         <a href="#servicos">Serviços</a>
         <a href="#sobre">Sobre</a>
+        <a href="#depoimentos">Depoimentos</a>
         <a href="#contato">Contato</a>
-        <button class="btn" id="btnAgendar">Agendar</button>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu">≡</button>
+      
+      <div class="header-actions">
+        <a href="https://wa.me/5521971413317" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Agendar
+        </a>
+      </div>
+      
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="top">
+  <!-- Hero Section -->
+  <section class="hero" id="home">
     <div class="hero-video">
-      <!-- Substituí o player do Wistia por um iframe com configurações específicas -->
       <iframe 
         src="https://fast.wistia.net/embed/iframe/yb61lm701j?videoFoam=true&autoplay=true&loop=true&muted=true&playbar=false&controlsVisibleOnLoad=false&playButton=false&volumeControl=false&fullscreenButton=false"
         title="Background Video"
@@ -159,106 +952,359 @@
         height="100%">
       </iframe>
     </div>
-
+    
     <div class="hero-overlay container">
+      <span class="badge">Fotógrafa & Videomaker Profissional</span>
       <h1>Transformando momentos em memórias eternas</h1>
-      <p class="sub">Fotografia e videomaker profissional — casamentos, noivados, eventos, ensaios, formaturas, aniversários 15 anos e produções personalizadas! </p>
+      <p>Especialista em capturar a essência de cada história através de imagens e vídeos que emocionam. Casamentos, ensaios, eventos corporativos e produções criativas no Rio de Janeiro.</p>
       <div class="hero-actions">
-        <a href="#contato" class="btn btn-ghost">Agendar agora</a>
-        <a href="#portfolio" class="btn">Ver portfólio</a>
+        <a href="#contato" class="btn btn-primary">
+          <i class="fas fa-calendar-check"></i> Agendar Sessão
+        </a>
+        <a href="#portfolio" class="btn btn-secondary">
+          <i class="fas fa-images"></i> Ver Portfólio
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section class="section" id="portfolio">
+  <!-- Destaques -->
+  <section class="section">
     <div class="container">
-      <h2>Portfólio</h2>
-      <p class="muted">Uma seleção de trabalhos recentes.</p>
-      <div class="carousel" id="carousel">
-        <button class="carousel-nav left" data-dir="-1">‹</button>
-        <div class="carousel-track" id="carouselTrack">
-          <div class="slide"><img src="https://picsum.photos/1200/800?random=101" alt=""><div class="slide-caption">Casamento</div></div>
-          <div class="slide"><img src="https://picsum.photos/1200/800?random=102" alt=""><div class="slide-caption">Ensaio Urbano</div></div>
-          <div class="slide"><video controls src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4"></video><div class="slide-caption">Making Of</div></div>
-          <div class="slide"><img src="https://picsum.photos/1200/800?random=103" alt=""><div class="slide-caption">Aniversário</div></div>
+      <div class="highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h3>+850 Fotos</h3>
+          <p>Entregues com excelência</p>
         </div>
-        <button class="carousel-nav right" data-dir="1">›</button>
+        
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>+320 Clientes</h3>
+          <p>Satisfeitos com meu trabalho</p>
+        </div>
+        
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3>+120 Eventos</h3>
+          <p>Realizados com sucesso</p>
+        </div>
+        
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>98% Satisfação</h3>
+          <p>Avaliação dos clientes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfólio -->
+  <section class="section section-alt" id="portfolio">
+    <div class="container">
+      <div class="text-center">
+        <span class="badge">Trabalhos Recentes</span>
+        <h2>Meu Portfólio</h2>
+        <p>Uma seleção dos meus trabalhos mais recentes em fotografia e videomaker</p>
+      </div>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="https://picsum.photos/600/800?random=1" alt="Casamento">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Casamento</span>
+            <h3>Clara & Rodrigo</h3>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="https://picsum.photos/600/800?random=2" alt="Ensaio Corporativo">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Ensaio Corporativo</span>
+            <h3>Empresa XYZ</h3>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="https://picsum.photos/600/800?random=3" alt="Ensaio Gestante">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Ensaio Gestante</span>
+            <h3>Maria & Família</h3>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="https://picsum.photos/600/800?random=4" alt="Evento Corporativo">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Evento</span>
+            <h3>Lançamento de Produto</h3>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="https://picsum.photos/600/800?random=5" alt="Ensaio Casal">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Ensaio Casal</span>
+            <h3>Ana & Pedro</h3>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="https://picsum.photos/600/800?random=6" alt="15 Anos">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">15 Anos</span>
+            <h3>Festinha de Aniversário</h3>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center" style="margin-top: 50px;">
+        <a href="#contato" class="btn btn-primary">
+          <i class="fas fa-images"></i> Ver Portfólio Completo
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Serviços -->
-  <section class="section alt" id="servicos">
-    <div class="container grid-3">
-      <div class="card"><h3>Casamentos</h3><p>Cobertura completa — fotos e vídeo documental.</p></div>
-      <div class="card"><h3>Ensaios</h3><p>Ensaios externos e estúdio com direção criativa.</p></div>
-      <div class="card"><h3>Corporativos</h3><p>Vídeos institucionais e fotos para redes sociais.</p></div>
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="text-center">
+        <span class="badge">O que Ofereço</span>
+        <h2>Meus Serviços</h2>
+        <p>Serviços personalizados para atender suas necessidades específicas</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-ring"></i>
+          </div>
+          <h3>Casamentos</h3>
+          <p>Cobertura completa do seu grande dia com fotos e vídeos que capturam cada momento especial</p>
+          <div class="service-price">A partir de R$ 2.500</div>
+          <ul class="service-features">
+            <li>Cobertura de até 10 horas</li>
+            <li>Fotos editadas em alta resolução</li>
+            <li>Vídeo highlight (3-5 min)</li>
+            <li>Segundo fotógrafo</li>
+            <li>Álbum físico premium</li>
+          </ul>
+          <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-user-friends"></i>
+          </div>
+          <h3>Ensaios Fotográficos</h3>
+          <p>Ensaios criativos para casais, gestantes, família, books pessoais e corporativos</p>
+          <div class="service-price">A partir de R$ 400</div>
+          <ul class="service-features">
+            <li>Sessão de 2-3 horas</li>
+            <li>Locais à sua escolha</li>
+            <li>Direção de poses e expressões</li>
+            <li>+50 fotos editadas</li>
+            <li>Entrega em 7 dias</li>
+          </ul>
+          <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>Eventos Corporativos</h3>
+          <p>Registro profissional para empresas: eventos, produtos, equipes e conteúdo para redes sociais</p>
+          <div class="service-price">Sob Consulta</div>
+          <ul class="service-features">
+            <li>Fotos para redes sociais</li>
+            <li>Vídeos institucionais</li>
+            <li>Cobertura de eventos</li>
+            <li>Fotos de produtos</li>
+            <li>Retratos corporativos</li>
+          </ul>
+          <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Sobre -->
-  <section class="section" id="sobre">
-    <div class="container about-grid">
-      <div class="about-photo"><img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/FotoIsa.png" alt=""></div>
-      <div>
-        <h2>Sobre Isa</h2>
-        <p class="muted">Isa é fotógrafa e videomaker com experiência em registrar momentos marcantes com sensibilidade e técnica.</p>
-        <ul class="stats">
-          <li><strong class="count" data-target="320">0</strong><span>Clientes</span></li>
-          <li><strong class="count" data-target="850">0</strong><span>Fotos entregues</span></li>
-          <li><strong class="count" data-target="120">0</strong><span>Eventos</span></li>
-          <li><strong class="count" data-target="98">0</strong><span>% Satisfação</span></li>
-        </ul>
-
-        <!-- Redes Sociais -->
-        <div class="socials">
-          <a href="https://instagram.com/fotografaisa" target="_blank" rel="noopener noreferrer" class="instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://wa.me/5521971413317" target="_blank" rel="noopener noreferrer" class="whatsapp">
-            <i class="fab fa-whatsapp"></i>
-          </a>
+  <section class="section section-alt" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/FotoIsa.png" alt="Fotografa Isa">
+        </div>
+        
+        <div>
+          <span class="badge">Sobre Mim</span>
+          <h2>Prazer, sou a Isa</h2>
+          <p>Há mais de 5 anos transformando momentos especiais em memórias eternas através da minha paixão pela fotografia e videomaker.</p>
+          <p>Minha missão é capturar a essência de cada história com sensibilidade, técnica e um olhar único. Acredito que cada pessoa, casal ou família tem uma história especial para contar, e me dedico a eternizar esses momentos de forma autêntica e emocionante.</p>
+          
+          <div class="stats">
+            <div class="stat-item">
+              <span class="stat-number" data-target="320">0</span>
+              <span>Clientes Felizes</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="850">0</span>
+              <span>Fotos Entregues</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="120">0</span>
+              <span>Eventos Realizados</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="98">0</span>
+              <span>% Satisfação</span>
+            </div>
+          </div>
+          
+          <div class="socials">
+            <a href="https://instagram.com/fotografaisa" class="btn btn-secondary" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/5521971413317" class="btn btn-whatsapp" target="_blank">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Depoimentos -->
-  <section class="section alt" id="testemunhos">
+  <section class="section" id="depoimentos">
     <div class="container">
-      <h2>O que dizem os clientes</h2>
-      <div class="testi-wrap">
-        <blockquote class="testi active">"Profissionalismo impecável. As fotos ficaram incríveis e o vídeo emocionou todos!" <footer>— Cliente A</footer></blockquote>
-        <blockquote class="testi">"Entrega rápida e atenção aos detalhes. Recomendadíssima!" <footer>— Cliente B</footer></blockquote>
-        <blockquote class="testi">"Trabalhar com Isa foi leve e criativo — captou tudo com perfeição." <footer>— Cliente C</footer></blockquote>
+      <div class="text-center">
+        <span class="badge">Feedback</span>
+        <h2>Depoimentos</h2>
+        <p>O que meus clientes dizem sobre meu trabalho</p>
+      </div>
+      
+      <div class="testimonials-slider">
+        <div class="testimonial active">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"A Isa foi incrível no nosso casamento! Capturou cada momento especial com tanta sensibilidade que quando vimos as fotos, revivemos toda a emoção do dia. Super profissional e atenciosa!"</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="testimonial-avatar">
+            <div>
+              <h4>Mariana Silva</h4>
+              <p>Noiva</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contato -->
-  <section class="section" id="contato">
-    <div class="container contact-grid">
-      <div class="contact-card">
-        <h2>Agende sua sessão</h2>
-        <form id="bookingForm">
-          <input type="text" placeholder="Nome completo" required>
-          <input type="email" placeholder="E-mail" required>
-          <input type="tel" placeholder="WhatsApp">
-          <textarea rows="4" placeholder="Mensagem"></textarea>
-          <div class="form-actions">
-            <button class="btn">Enviar Pedido</button>
-            <a href="mailto:contato@fotografaisa.com" class="btn-ghost btn">Enviar por E-mail</a>
-          </div>
-        </form>
+  <section class="section section-alt" id="contato">
+    <div class="container">
+      <div class="text-center">
+        <span class="badge">Vamos Conversar</span>
+        <h2>Entre em Contato</h2>
+        <p>Pronto para transformar seus momentos em memórias eternas? Entre em contato!</p>
       </div>
-      <div class="contact-info">
-        <h3>Contato rápido</h3>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5521980081646">+55 +55 21 97141-3317</a></p>
-        <p><strong>Instagram:</strong> <a href="https://instagram.com/fotografaisa">@fotografaisa</a></p>
-        <p><strong>Local:</strong> Rio de Janeiro, RJ</p>
-        <div class="mini-gallery">
-          <img src="https://picsum.photos/320/240?random=11"><img src="https://picsum.photos/320/240?random=12"><img src="https://picsum.photos/320/240?random=13">
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h4>Localização</h4>
+              <p>Rio de Janeiro, RJ</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <h4>Telefone</h4>
+              <p><a href="tel:+5521971413317">(21) 97141-3317</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h4>E-mail</h4>
+              <p><a href="mailto:contato@fotografaisa.com">contato@fotografaisa.com</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <h4>Horário de Atendimento</h4>
+              <p>Segunda a Sábado: 9h às 20h</p>
+            </div>
+          </div>
+          
+          <div class="socials">
+            <a href="https://instagram.com/fotografaisa" class="btn btn-secondary" target="_blank">
+              <i class="fab fa-instagram"></i> Siga no Instagram
+            </a>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Seu nome completo" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Seu e-mail" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="tel" class="form-control" placeholder="Seu WhatsApp">
+            </div>
+            
+            <div class="form-group">
+              <select class="form-control" required>
+                <option value="" disabled selected>Selecione o serviço</option>
+                <option value="casamento">Casamento</option>
+                <option value="ensaio">Ensaio Fotográfico</option>
+                <option value="corporativo">Evento Corporativo</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Conte-me mais sobre sua ideia..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -266,69 +1312,227 @@
 
   <!-- Footer -->
   <footer>
-    <small>© <span id="year"></span> Fotografa Isa — Todos os direitos reservados.</small>
-    <small>Desenvolvido por <a href="https://www.instagram.com/enceladus_market/" target="_blank" rel="noopener noreferrer">Enceladus Marketing</a></small>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/logoIsamaker.png" alt="Fotografa Isa" class="footer-logo">
+          <p>Fotógrafa e videomaker profissional no Rio de Janeiro, especializada em transformar momentos especiais em memórias eternas.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/fotografaisa" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5521971413317" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://facebook.com/fotografaisa" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://pinterest.com/fotografaisa" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#servicos">Casamentos</a></li>
+            <li><a href="#servicos">Ensaios Fotográficos</a></li>
+            <li><a href="#servicos">Eventos Corporativos</a></li>
+            <li><a href="#servicos">15 Anos</a></li>
+            <li><a href="#servicos">Ensaios Gestante</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-phone-alt"></i> (21) 97141-3317</li>
+            <li><i class="fas fa-envelope"></i> contato@fotografaisa.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Rio de Janeiro, RJ</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Fotografa Isa. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="https://www.instagram.com/enceladus_market/" target="_blank">Enceladus Marketing</a></p>
+      </div>
+    </div>
   </footer>
 
+  <!-- WhatsApp Flutuante -->
+  <div class="floating-whatsapp">
+    <a href="https://wa.me/5521971413317?text=Olá! Gostaria de agendar uma sessão fotográfica." class="btn btn-whatsapp pulse" target="_blank">
+      <i class="fab fa-whatsapp"></i> Agendar pelo WhatsApp
+    </a>
+  </div>
+
+  <!-- Modal de Agendamento -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <h3>Agendar Sessão</h3>
+      <p>Preencha os dados abaixo para agendar sua sessão fotográfica:</p>
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Nome completo" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="E-mail" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" class="form-control" placeholder="WhatsApp" required>
+        </div>
+        <div class="form-group">
+          <select class="form-control" required>
+            <option value="" disabled selected>Tipo de sessão</option>
+            <option value="casamento">Casamento</option>
+            <option value="ensaio-casal">Ensaio de Casal</option>
+            <option value="ensaio-familia">Ensaio de Família</option>
+            <option value="ensaio-gestante">Ensaio Gestante</option>
+            <option value="15-anos">15 Anos</option>
+            <option value="corporativo">Evento Corporativo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="date" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Solicitar Agendamento</button>
+      </form>
+    </div>
+  </div>
+
   <script>
-    // ==== MENU MOBILE ====
-    const hamburger=document.getElementById('hamburger');
-    const nav=document.getElementById('mainNav');
-    hamburger.onclick=()=>nav.classList.toggle('active');
-
-    // ==== CAROUSEL ====
-    const track=document.getElementById('carouselTrack');
-    const slides=document.querySelectorAll('.slide');
-    let index=0;
-    document.querySelectorAll('.carousel-nav').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        index+=parseInt(btn.dataset.dir);
-        if(index<0)index=slides.length-1;
-        if(index>=slides.length)index=0;
-        track.style.transform=`translateX(${-index*100}%)`;
-      });
-    });
-
-    // ==== CONTADORES ====
-    const counters=document.querySelectorAll('.count');
-    let started=false;
-    window.addEventListener('scroll',()=>{
-      const section=document.getElementById('sobre');
-      if(!started && section.getBoundingClientRect().top<window.innerHeight){
-        started=true;
-        counters.forEach(el=>{
-          const target=+el.getAttribute('data-target');
-          let count=0;
-          const step=Math.ceil(target/100);
-          const update=()=>{
-            count+=step;
-            if(count>target)count=target;
-            el.textContent=count;
-            if(count<target)requestAnimationFrame(update);
-          };
-          update();
-        });
+    // ==== ANIMAÇÃO DE SCROLL DO HEADER ====
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
     });
 
-    // ==== TESTEMUNHOS ROTATIVOS ====
-    const testis=document.querySelectorAll('.testi');
-    let tIndex=0;
-    setInterval(()=>{
-      testis[tIndex].classList.remove('active');
-      tIndex=(tIndex+1)%testis.length;
-      testis[tIndex].classList.add('active');
-    },4000);
+    // ==== MENU MOBILE ====
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
 
-    // ==== ANO RODAPÉ ====
-    document.getElementById('year').textContent=new Date().getFullYear();
+    // ==== CONTADORES ANIMADOS ====
+    const counters = document.querySelectorAll('.stat-number');
+    let started = false;
 
-    // ==== CONFIGURAÇÃO DO VÍDEO WISTIA ====
-    // Carrega o script do Wistia de forma síncrona para garantir que o vídeo carregue com a página
+    function startCounters() {
+      if (started) return;
+      
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const increment = target / 100;
+        
+        const updateCounter = () => {
+          if (count < target) {
+            count += increment;
+            counter.innerText = Math.ceil(count);
+            setTimeout(updateCounter, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        
+        updateCounter();
+      });
+      
+      started = true;
+    }
+
+    // Verifica quando a seção sobre está visível
+    const aboutSection = document.getElementById('sobre');
+    
+    function checkScroll() {
+      const sectionTop = aboutSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (sectionTop < windowHeight - 100) {
+        startCounters();
+      }
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+
+    // ==== MODAL ====
+    const bookingModal = document.getElementById('bookingModal');
+    const closeModal = document.getElementById('closeModal');
+    const agendarButtons = document.querySelectorAll('#btnAgendar, .btn-agendar');
+
+    agendarButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        bookingModal.classList.add('active');
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      bookingModal.classList.remove('active');
+    });
+
+    // Fechar modal ao clicar fora
+    window.addEventListener('click', (e) => {
+      if (e.target === bookingModal) {
+        bookingModal.classList.remove('active');
+      }
+    });
+
+    // ==== ANO ATUAL NO FOOTER ====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ==== FORMULÁRIO DE CONTATO ====
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Simulação de envio
+      alert('Obrigada pelo seu interesse! Entrarei em contato em breve.');
+      contactForm.reset();
+    });
+
+    // ==== SCROLL SUAVE ====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Fechar menu mobile após clicar em um link
+          if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+          }
+        }
+      });
+    });
+
+    // ==== CARREGAMENTO DO WISTIA ====
     document.addEventListener('DOMContentLoaded', function() {
       const wistiaScript = document.createElement('script');
       wistiaScript.src = 'https://fast.wistia.com/assets/external/E-v1.js';
-      wistiaScript.async = false; // Carregamento síncrono
+      wistiaScript.async = false;
       document.head.appendChild(wistiaScript);
     });
   </script>
