@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -77,7 +78,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 100px; /* Espaço para a barra fixa */
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -86,7 +87,7 @@
       background: var(--dark);
       line-height: 1.7;
       overflow-x: hidden;
-      padding-top: 80px; /* Espaço para o header fixo */
+      padding-top: 80px;
     }
 
     img, video {
@@ -320,20 +321,17 @@
       cursor: pointer;
     }
 
-    /* ==== HERO ==== */
+    /* ==== HERO SECTION CORRIGIDA ==== */
     .hero {
-       position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  margin-top: -80px; /* Compensa o padding do body */
-  padding-top: 120px; /* Espaço extra para não ficar atrás do header */
-  padding-bottom: 80px; /* Espaço na parte inferior */
-  min-height: 100vh; /* Garante altura mínima */
-}
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 0;
+    }
 
     .hero-video {
       position: absolute;
@@ -352,10 +350,11 @@
     }
 
     .hero-overlay {
-  max-width: 900px;
-  z-index: 1;
-  padding: 40px 20px; /* Padding interno para respiro */
-  margin-top: 60px; /* Empurra o conteúdo para baixo do header */
+      max-width: 900px;
+      z-index: 1;
+      padding: 40px 20px;
+      margin: 0 auto;
+      width: 100%;
     }
 
     .hero h1 {
@@ -449,18 +448,11 @@
       transform: scale(1.1);
     }
 
-    /* Estilo específico para o player Wistia */
     .wistia-player-container {
       position: relative;
       width: 100%;
       height: 100%;
       background: #000;
-    }
-
-    .wistia-player-container wistia-player {
-      width: 100%;
-      height: 100%;
-      display: block;
     }
 
     .portfolio-overlay {
@@ -610,11 +602,10 @@
       display: block;
     }
 
-    /* Centralizar e espaçar redes sociais */
     .socials-centralizadas {
       display: flex;
       justify-content: center;
-      gap: 30px; /* 2 dedos de espaço */
+      gap: 30px;
       margin-top: 20px;
       flex-wrap: wrap;
     }
@@ -846,105 +837,6 @@
       animation: pulse 2s infinite;
     }
 
-    /* ==== RESPONSIVO ==== */
-
-
-/* Garante que o conteúdo do hero fique sempre visível */
-@media (max-height: 700px) {
-  .hero {
-    min-height: 700px;
-    padding-top: 100px;
-    padding-bottom: 60px;
-  }
-  
-  .hero-overlay {
-    margin-top: 40px;
-  }
-}
-
-/* Ajustes para mobile */
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 100px;
-    padding-bottom: 60px;
-    margin-top: -80px;
-  }
-
-
-
- .hero-overlay {
-    margin-top: 40px;
-    padding: 30px 15px;
-  }
-  
-  .hero h1 {
-    margin-bottom: 1rem;
-  }
-  
-  .hero p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-}
-
-  
-
-
-    
-    @media (max-width: 992px) {
-      .hero-actions {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .btn {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--dark);
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: var(--shadow);
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .header-actions {
-        display: none;
-      }
-
-      .highlights {
-        margin-top: 0;
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 70px 0;
-      }
-
-      .socials-centralizadas {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-      }
-    }
-
     /* ==== COMPONENTES ESPECIAIS ==== */
     .floating-whatsapp {
       position: fixed;
@@ -1002,6 +894,137 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
+
+    /* ==== RESPONSIVIDADE CORRIGIDA ==== */
+    @media (max-width: 992px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .header-actions {
+        display: none;
+      }
+
+      .highlights {
+        margin-top: 0;
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .socials-centralizadas {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      /* Ajustes específicos para mobile */
+      .hero {
+        min-height: 90vh;
+        padding: 20px 0;
+      }
+
+      .hero-overlay {
+        padding: 30px 15px;
+        margin-top: 20px;
+      }
+
+      .hero h1 {
+        margin-bottom: 1rem;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      .hero p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    /* ==== CORREÇÕES ESPECÍFICAS POR DISPOSITIVO ==== */
+    
+    /* iPhone 12/13/14/15/16 Pro (390x844) e similares */
+    @media (max-width: 390px) {
+      .hero {
+        min-height: 85vh;
+      }
+      
+      .hero-overlay {
+        padding: 20px 10px;
+        margin-top: 15px;
+      }
+    }
+
+    /* iPhone 11 (414x896) */
+    @media (max-width: 414px) and (max-height: 896px) {
+      .hero {
+        min-height: 90vh;
+      }
+    }
+
+    /* Dispositivos muito pequenos (320px) */
+    @media (max-width: 320px) {
+      .hero {
+        min-height: 80vh;
+      }
+      
+      .hero-overlay {
+        padding: 15px 8px;
+      }
+      
+      .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Tablets e dispositivos maiores */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .hero {
+        min-height: 95vh;
+      }
+    }
+
+    /* Telas muito curtas */
+    @media (max-height: 600px) {
+      .hero {
+        min-height: 600px;
+      }
+      
+      .hero-overlay {
+        padding: 20px 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1033,9 +1056,6 @@
     </div>
   </header>
 
-
-
-  
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-video">
@@ -1069,10 +1089,6 @@
     </div>
   </section>
 
-
-
-  
-  
   <!-- Destaques -->
   <section class="section">
     <div class="container">
@@ -1112,163 +1128,93 @@
     </div>
   </section>
 
-
-  
-  
   <!-- Portfólio -->
-<section class="section section-alt" id="portfolio">
-  <div class="container">
-    <div class="text-center">
-      <span class="badge">Trabalhos Recentes</span>
-      <h2>Meu Portfólio</h2>
-      <p>Uma seleção dos meus trabalhos mais recentes em fotografia e videomaker</p>
-    </div>
-    
-    <div class="portfolio-grid">
-      <!-- Primeiro item -->
-      <div class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/Poliana%20e%20Felipe.png" alt="Casamento">
-        <div class="portfolio-overlay">
-          <span class="portfolio-category">Casamento</span>
-          <h3>Poliana & Felipe</h3>
-        </div>
+  <section class="section section-alt" id="portfolio">
+    <div class="container">
+      <div class="text-center">
+        <span class="badge">Trabalhos Recentes</span>
+        <h2>Meu Portfólio</h2>
+        <p>Uma seleção dos meus trabalhos mais recentes em fotografia e videomaker</p>
       </div>
-
-      <!-- Segundo item -->
-      <div class="portfolio-item">
-        <div class="wistia-player-container">
-          <script src="https://fast.wistia.com/player.js" async></script>
-          <script src="https://fast.wistia.com/embed/lulms1qhjz.js" async type="module"></script>
-          <style>
-            wistia-player[media-id='lulms1qhjz']:not(:defined) { 
-              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lulms1qhjz/swatch'); 
-              display: block; 
-              filter: blur(5px); 
-              padding-top: 177.78%; 
-            }
-          </style>
-          <wistia-player media-id="lulms1qhjz" aspect="0.5625"></wistia-player>
-        </div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-category">Ensaio Fotográfico</span>
-          <h3>Making-of</h3>
-        </div>
-      </div>
-
-      <!-- Terceiro item -->
-      <div class="portfolio-item">
-        <div class="wistia-player-container">
-          <script src="https://fast.wistia.com/player.js" async></script>
-          <script src="https://fast.wistia.com/embed/m6sj7m7znf.js" async type="module"></script>
-          <style>
-            wistia-player[media-id='m6sj7m7znf']:not(:defined) { 
-              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/m6sj7m7znf/swatch'); 
-              display: block; 
-              filter: blur(5px); 
-              padding-top: 177.78%; 
-            }
-          </style>
-          <wistia-player media-id="m6sj7m7znf" aspect="0.5625"></wistia-player>
-        </div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-category">Ensaio de Casamento</span>
-          <h3>Pré-weeding</h3>
-        </div>
-      </div>
-
-      <!-- Quarto item -->
-      <div class="portfolio-item">
-        <div class="wistia-player-container">
-          <script src="https://fast.wistia.com/player.js" async></script>
-          <script src="https://fast.wistia.com/embed/dyjwq5i615.js" async type="module"></script>
-          <style>
-            wistia-player[media-id='dyjwq5i615']:not(:defined) { 
-              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/dyjwq5i615/swatch'); 
-              display: block; 
-              filter: blur(5px); 
-              padding-top: 177.78%; 
-            }
-          </style>
-          <wistia-player media-id="dyjwq5i615" aspect="0.5625"></wistia-player>
-        </div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-category">Baile de Inverno</span>
-          <h3>Ana comemora 15 anos</h3>
-        </div>
-      </div>
-
-      <!-- Quinto item -->
-      <div class="portfolio-item">
-        <div class="wistia-player-container">
-          <script src="https://fast.wistia.com/player.js" async></script>
-          <script src="https://fast.wistia.com/embed/uo2483sd6s.js" async type="module"></script>
-          <style>
-            wistia-player[media-id='uo2483sd6s']:not(:defined) { 
-              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/uo2483sd6s/swatch'); 
-              display: block; 
-              filter: blur(5px); 
-              padding-top: 177.78%; 
-            }
-          </style>
-          <wistia-player media-id="uo2483sd6s" aspect="0.5625"></wistia-player>
-        </div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-category">Aniversário 15 anos</span>
-          <h3>Making-of de Julia</h3>
-        </div>
-      </div>
-
-      <!-- Sexto item (que estava desalinhado) -->
-      <div class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/Festa de Debutantes.png" alt="Casamento">
-        <div class="portfolio-overlay">
-          <span class="portfolio-category">Aniversário</span>
-          <h3>Aniversário 15 anos</h3>
-        </div>
-      </div>
-
-
-
-      <!-- Sétimo item -->
-      <div class="portfolio-item">
-        <div class="wistia-player-container">
-          <script src="https://fast.wistia.com/player.js" async></script>
-          <script src="https://fast.wistia.com/embed/xj0qj3n9y5.js" async type="module"></script>
-          <style>
-            wistia-player[media-id='uo2483sd6s']:not(:defined) { 
-              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xj0qj3n9y5/swatch'); 
-              display: block; 
-              filter: blur(5px); 
-              padding-top: 177.78%; 
-            }
-          </style>
-          <wistia-player media-id="xj0qj3n9y5" aspect="0.5625"></wistia-player>
-        </div>
-        <div class="portfolio-overlay">
-          <span class="portfolio-category">Aniversário criança</span>
-          <h3>Princesa Sophia</h3>
-        </div>
-      </div>
-
-
-
-
-
       
+      <div class="portfolio-grid">
+        <!-- Itens do portfólio mantidos iguais -->
+        <div class="portfolio-item">
+          <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/Poliana%20e%20Felipe.png" alt="Casamento">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Casamento</span>
+            <h3>Poliana & Felipe</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="wistia-player-container">
+            <wistia-player media-id="lulms1qhjz" aspect="0.5625"></wistia-player>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Ensaio Fotográfico</span>
+            <h3>Making-of</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="wistia-player-container">
+            <wistia-player media-id="m6sj7m7znf" aspect="0.5625"></wistia-player>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Ensaio de Casamento</span>
+            <h3>Pré-weeding</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="wistia-player-container">
+            <wistia-player media-id="dyjwq5i615" aspect="0.5625"></wistia-player>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Baile de Inverno</span>
+            <h3>Ana comemora 15 anos</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="wistia-player-container">
+            <wistia-player media-id="uo2483sd6s" aspect="0.5625"></wistia-player>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Aniversário 15 anos</span>
+            <h3>Making-of de Julia</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/Festa%20de%20Debutantes.png" alt="Aniversário">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Aniversário</span>
+            <h3>Aniversário 15 anos</h3>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="wistia-player-container">
+            <wistia-player media-id="xj0qj3n9y5" aspect="0.5625"></wistia-player>
+          </div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Aniversário criança</span>
+            <h3>Princesa Sophia</h3>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center" style="margin-top: 50px;">
+        <a href="#contato" class="btn btn-primary">
+          <i class="fas fa-images"></i> Ver Portfólio Completo
+        </a>
+      </div>
     </div>
-    
-    <div class="text-center" style="margin-top: 50px;">
-      <a href="#contato" class="btn btn-primary">
-        <i class="fas fa-images"></i> Ver Portfólio Completo
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
-
-
-  
-
+  <!-- Resto do código mantido igual (Serviços, Sobre, Depoimentos, Contato, Footer) -->
   <!-- Serviços -->
   <section class="section" id="servicos">
     <div class="container">
@@ -1383,7 +1329,6 @@
             </div>
           </div>
           
-          <!-- Redes sociais centralizadas com cores originais e espaçadas -->
           <div class="socials-centralizadas">
             <a href="https://instagram.com/fotografaisa" class="btn btn-instagram" target="_blank">
               <i class="fab fa-instagram"></i> Instagram
@@ -1407,14 +1352,10 @@
       </div>
       
       <div class="testimonials-slider">
-        <!-- Depoimento 1 - Casamento -->
+        <!-- Depoimentos mantidos iguais -->
         <div class="testimonial active">
           <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p>"A Isa foi incrível no nosso casamento! Capturou cada momento especial com tanta sensibilidade que quando vimos as fotos, revivemos toda a emoção do dia. Super profissional e atenciosa!"</p>
           <div class="testimonial-author">
@@ -1426,14 +1367,9 @@
           </div>
         </div>
 
-        <!-- Depoimento 2 - 15 Anos -->
         <div class="testimonial">
           <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p>"Minha festa de 15 anos foi perfeita e a Isa capturou cada detalhe! As fotos ficaram maravilhosas e o vídeo emocionou toda minha família. Ela tem um talento incrível para fazer a gente se sentir à vontade!"</p>
           <div class="testimonial-author">
@@ -1445,14 +1381,9 @@
           </div>
         </div>
 
-        <!-- Depoimento 3 - Formatura -->
         <div class="testimonial">
           <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p>"Contratei a Isa para minha formatura em Medicina e não me arrependo! As fotos ficaram incríveis e ela conseguiu capturar a emoção desse momento tão especial. Profissionalismo e talento!"</p>
           <div class="testimonial-author">
@@ -1464,14 +1395,9 @@
           </div>
         </div>
 
-        <!-- Depoimento 4 - Pré-Wedding -->
         <div class="testimonial">
           <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p>"Fizemos o ensaio pré-wedding com a Isa e foi uma experiência incrível! Ela nos orientou com poses naturais e as fotos ficaram exatamente como imaginávamos. Recomendo de olhos fechados!"</p>
           <div class="testimonial-author">
@@ -1483,14 +1409,9 @@
           </div>
         </div>
 
-        <!-- Depoimento 5 - Bodas -->
         <div class="testimonial">
           <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p>"A Isa criou a magia em nosso casamento. As fotos e vídeos transmitem todo o amor e história que construímos nesses 5 anos. Obrigada por eternizar esse momento!"</p>
           <div class="testimonial-author">
@@ -1665,6 +1586,38 @@
   </div>
 
   <script>
+    // ==== CORREÇÃO DINÂMICA DO HERO ====
+    function adjustHeroSpacing() {
+      const hero = document.querySelector('.hero');
+      const header = document.getElementById('header');
+      
+      if (!hero || !header) return;
+      
+      const headerHeight = header.offsetHeight;
+      const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
+      
+      // Ajuste base mais seguro
+      let minHeight = viewportHeight;
+      
+      // Ajustes específicos por tamanho de tela
+      if (viewportWidth <= 320) {
+        minHeight = Math.max(viewportHeight, 500);
+      } else if (viewportWidth <= 414) {
+        minHeight = Math.max(viewportHeight, 600);
+      } else if (viewportHeight < 700) {
+        minHeight = 700;
+      }
+      
+      // Aplicar a altura mínima
+      hero.style.minHeight = minHeight + 'px';
+    }
+
+    // Executar ajustes de espaçamento
+    window.addEventListener('load', adjustHeroSpacing);
+    window.addEventListener('resize', adjustHeroSpacing);
+    window.addEventListener('orientationchange', adjustHeroSpacing);
+
     // ==== ANIMAÇÃO DE SCROLL DO HEADER ====
     window.addEventListener('scroll', function() {
       const header = document.getElementById('header');
@@ -1719,7 +1672,6 @@
       }
     }
 
-    // Iniciar contadores quando a página carregar se a seção já estiver visível
     window.addEventListener('load', checkScrollForCounters);
     window.addEventListener('scroll', checkScrollForCounters);
 
@@ -1733,7 +1685,6 @@
       testimonials[currentTestimonial].classList.add('active');
     }
 
-    // Mudar depoimento a cada 5 segundos
     setInterval(showNextTestimonial, 5000);
 
     // ==== FORMULÁRIO QUE ENVIA DIRETO PARA O WHATSAPP ====
@@ -1742,26 +1693,17 @@
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Coletar dados do formulário
       const nome = document.getElementById('nome').value;
       const email = document.getElementById('email').value;
       const whatsapp = document.getElementById('whatsapp').value;
       const servico = document.getElementById('servico').value;
       const mensagem = document.getElementById('mensagem').value;
       
-      // Montar mensagem para WhatsApp
       const texto = `Olá Isa! Gostaria de solicitar um orçamento:\n\n*Nome:* ${nome}\n*E-mail:* ${email}\n*WhatsApp:* ${whatsapp}\n*Serviço:* ${servico}\n*Mensagem:* ${mensagem}`;
-      
-      // Codificar a mensagem para URL
       const mensagemCodificada = encodeURIComponent(texto);
-      
-      // Número do WhatsApp
       const numeroWhatsApp = '5521971413317';
       
-      // Redirecionar para o WhatsApp
       window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`, '_blank');
-      
-      // Limpar formulário
       contactForm.reset();
     });
 
@@ -1776,11 +1718,10 @@
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 100, // Compensa o header fixo
+            top: targetElement.offsetTop - 100,
             behavior: 'smooth'
           });
           
-          // Fechar menu mobile após clicar em um link
           if (nav.classList.contains('active')) {
             nav.classList.remove('active');
           }
@@ -1798,6 +1739,9 @@
       wistiaScript.async = false;
       document.head.appendChild(wistiaScript);
     });
+
+    // Executar ajuste final após tudo carregar
+    setTimeout(adjustHeroSpacing, 500);
   </script>
 </body>
 </html>
