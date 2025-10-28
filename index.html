@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -32,8 +33,10 @@
     "description": "Fotógrafa e videomaker profissional especializada em casamentos, ensaios e eventos no Rio de Janeiro",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Rio de Janeiro",
-      "addressRegion": "RJ"
+      "streetAddress": "Av. Dr. Arruda Negreiros, 965 - Vila São Teodoro",
+      "addressLocality": "Nova Iguaçu",
+      "addressRegion": "RJ",
+      "postalCode": "26023-210"
     },
     "telephone": "+5521971413317",
     "openingHours": "Mo-Su 09:00-20:00",
@@ -46,25 +49,28 @@
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
   <style>
-    /* ==== VARIÁVEIS CSS ==== */
+    /* ==== NOVA PALETA DE CORES - MODERNA E ELEGANTE ==== */
     :root {
-      --primary: #ff3366;
-      --primary-dark: #e62e5c;
-      --secondary: #6a11cb;
-      --accent: #00c6ff;
-      --dark: #0a0a0a;
-      --dark-light: #1a1a1a;
-      --text: #ffffff;
-      --text-muted: #b0b0b0;
+      --primary: #E8B4B8;    /* Rosa pálido e elegante */
+      --primary-light: #F5E1E2; /* Rosa muito claro */
+      --secondary: #A5B5A1;  /* Verde cinza suave */
+      --accent: #D4A5A5;     /* Rosa terroso */
+      --light: #FAF7F5;      /* Branco quente */
+      --light-alt: #F0EBE6;  /* Bege claro */
+      --text: #5A5A5A;       /* Cinza escuro para texto */
+      --text-light: #8E8E8E; /* Cinza médio */
+      --text-muted: #B0B0B0; /* Cinza claro */
+      --white: #FFFFFF;
       --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.4);
+      --gradient-light: linear-gradient(135deg, var(--primary-light) 0%, var(--light-alt) 100%);
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
       --radius: 12px;
+      --radius-lg: 20px;
       --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
@@ -83,30 +89,23 @@
     body {
       font-family: 'Poppins', sans-serif;
       color: var(--text);
-      background: var(--dark);
+      background: var(--light);
       line-height: 1.7;
       overflow-x: hidden;
-      padding-top: 80px;
+      padding-top: 90px;
     }
 
-    img, video {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* ==== TIPOGRAFIA ==== */
     h1, h2, h3, h4, h5 {
-      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
       line-height: 1.2;
       margin-bottom: 1rem;
+      color: var(--text);
     }
 
     h1 {
       font-size: clamp(2.5rem, 5vw, 4rem);
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--text);
     }
 
     h2 {
@@ -121,7 +120,7 @@
       bottom: -10px;
       left: 0;
       width: 60px;
-      height: 4px;
+      height: 3px;
       background: var(--gradient);
       border-radius: 2px;
     }
@@ -133,7 +132,7 @@
 
     p {
       margin-bottom: 1.5rem;
-      color: var(--text-muted);
+      color: var(--text-light);
     }
 
     .text-center {
@@ -143,6 +142,11 @@
     .text-center h2::after {
       left: 50%;
       transform: translateX(-50%);
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
     }
 
     /* ==== BOTÕES ==== */
@@ -173,6 +177,7 @@
       background: var(--gradient);
       z-index: -1;
       transition: var(--transition);
+      border-radius: 50px;
     }
 
     .btn:hover::before {
@@ -181,7 +186,7 @@
 
     .btn-primary {
       background: var(--gradient);
-      color: white;
+      color: var(--white);
       box-shadow: var(--shadow);
     }
 
@@ -198,7 +203,7 @@
 
     .btn-secondary:hover {
       background: var(--primary);
-      color: white;
+      color: var(--white);
       transform: translateY(-3px);
     }
 
@@ -237,30 +242,31 @@
     }
 
     .section-alt {
-      background: var(--dark-light);
+      background: var(--light-alt);
     }
 
-    /* ==== HEADER ==== */
+    /* ==== HEADER MODERNO ==== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(10, 10, 10, 0.9);
+      background: rgba(250, 247, 245, 0.95);
       backdrop-filter: blur(10px);
       z-index: 1000;
       transition: var(--transition);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     header.scrolled {
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 0;
+      padding: 20px 0;
     }
 
     .logo {
@@ -311,16 +317,59 @@
       gap: 15px;
     }
 
+    /* ==== MENU HAMBÚRGUER MELHORADO ==== */
     .hamburger {
       display: none;
       background: none;
       border: none;
-      color: var(--text);
-      font-size: 1.5rem;
       cursor: pointer;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      z-index: 1001;
     }
 
-    /* ==== HERO SECTION CORRIGIDA ==== */
+    .hamburger span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: var(--text);
+      border-radius: 3px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+    }
+
+    .hamburger span:nth-child(1) {
+      top: 6px;
+    }
+
+    .hamburger span:nth-child(2) {
+      top: 13px;
+    }
+
+    .hamburger span:nth-child(3) {
+      top: 20px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      top: 13px;
+      transform: rotate(135deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+      left: -30px;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      top: 13px;
+      transform: rotate(-135deg);
+    }
+
+    /* ==== HERO SECTION ==== */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -330,6 +379,7 @@
       text-align: center;
       overflow: hidden;
       padding: 0;
+      background: var(--gradient-light);
     }
 
     .hero-video {
@@ -345,7 +395,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.4) blur(3px);
+      filter: brightness(0.7) blur(2px);
     }
 
     .hero-overlay {
@@ -386,13 +436,13 @@
     }
 
     .highlight-card {
-      background: var(--dark-light);
+      background: var(--white);
       padding: 30px;
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       text-align: center;
       box-shadow: var(--shadow);
       transition: var(--transition);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.03);
     }
 
     .highlight-card:hover {
@@ -410,6 +460,7 @@
       align-items: center;
       justify-content: center;
       font-size: 1.8rem;
+      color: var(--white);
     }
 
     /* ==== PORTFÓLIO ==== */
@@ -422,7 +473,7 @@
 
     .portfolio-item {
       position: relative;
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       overflow: hidden;
       aspect-ratio: 4/5;
       box-shadow: var(--shadow);
@@ -460,10 +511,11 @@
       left: 0;
       width: 100%;
       padding: 30px 20px 20px;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
       transform: translateY(10px);
       opacity: 0;
       transition: var(--transition);
+      color: var(--white);
     }
 
     .portfolio-item:hover .portfolio-overlay {
@@ -490,13 +542,13 @@
     }
 
     .service-card {
-      background: var(--dark-light);
+      background: var(--white);
       padding: 40px 30px;
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       text-align: center;
       box-shadow: var(--shadow);
       transition: var(--transition);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.03);
       position: relative;
       overflow: hidden;
     }
@@ -540,7 +592,7 @@
 
     .service-features li {
       padding: 8px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       position: relative;
       padding-left: 25px;
     }
@@ -563,9 +615,9 @@
 
     .about-image {
       position: relative;
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-lg);
     }
 
     .about-image::before {
@@ -576,7 +628,7 @@
       right: -20px;
       bottom: -20px;
       border: 3px solid var(--primary);
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       z-index: -1;
     }
 
@@ -617,9 +669,9 @@
     }
 
     .testimonial {
-      background: var(--dark-light);
+      background: var(--white);
       padding: 40px;
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
       text-align: center;
       position: relative;
@@ -689,12 +741,13 @@
       align-items: center;
       justify-content: center;
       font-size: 1.2rem;
+      color: var(--white);
     }
 
     .contact-form {
-      background: var(--dark-light);
+      background: var(--white);
       padding: 40px;
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
     }
 
@@ -705,8 +758,8 @@
     .form-control {
       width: 100%;
       padding: 15px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--light);
+      border: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: var(--radius);
       color: var(--text);
       font-size: 1rem;
@@ -716,7 +769,7 @@
     .form-control:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 2px rgba(255, 51, 102, 0.2);
+      box-shadow: 0 0 0 2px rgba(232, 180, 184, 0.2);
     }
 
     textarea.form-control {
@@ -724,10 +777,47 @@
       resize: vertical;
     }
 
+    /* ==== SEÇÃO DO MAPA ==== */
+    .map-section {
+      padding: 80px 0;
+      background: var(--light-alt);
+    }
+
+    .map-container {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      margin-top: 30px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      display: block;
+    }
+
+    .address-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .address-info h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .address-info p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
     /* ==== FOOTER ==== */
     footer {
-      background: var(--dark-light);
+      background: var(--white);
       padding: 60px 0 20px;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .footer-grid {
@@ -754,14 +844,15 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--light);
       border-radius: 50%;
       color: var(--text);
       transition: var(--transition);
     }
 
     .footer-social a:hover {
-      background: var(--primary);
+      background: var(--gradient);
+      color: var(--white);
       transform: translateY(-3px);
     }
 
@@ -790,7 +881,7 @@
     }
 
     .footer-links a {
-      color: var(--text-muted);
+      color: var(--text-light);
       text-decoration: none;
       transition: var(--transition);
     }
@@ -803,7 +894,7 @@
     .footer-bottom {
       text-align: center;
       padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
       color: var(--text-muted);
       font-size: 0.9rem;
     }
@@ -849,11 +940,12 @@
       display: inline-block;
       background: var(--gradient);
       color: white;
-      padding: 5px 15px;
+      padding: 8px 20px;
       border-radius: 50px;
       font-size: 0.8rem;
       font-weight: 600;
       margin-bottom: 15px;
+      letter-spacing: 0.5px;
     }
 
     .modal {
@@ -863,7 +955,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 2000;
       align-items: center;
       justify-content: center;
@@ -874,13 +966,14 @@
     }
 
     .modal-content {
-      background: var(--dark-light);
+      background: var(--white);
       padding: 40px;
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       max-width: 500px;
       width: 90%;
       position: relative;
       animation: fadeInUp 0.5s ease;
+      box-shadow: var(--shadow-lg);
     }
 
     .close-modal {
@@ -894,7 +987,7 @@
       cursor: pointer;
     }
 
-    /* ==== RESPONSIVIDADE CORRIGIDA ==== */
+    /* ==== RESPONSIVIDADE ==== */
     @media (max-width: 992px) {
       .hero-actions {
         flex-direction: column;
@@ -911,18 +1004,30 @@
     @media (max-width: 768px) {
       nav {
         display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
-        background: var(--dark);
+        height: 100vh;
+        background: var(--light);
         flex-direction: column;
-        padding: 20px;
+        padding: 100px 20px 20px;
         box-shadow: var(--shadow);
+        z-index: 999;
+        justify-content: flex-start;
+        gap: 20px;
       }
 
       nav.active {
         display: flex;
+      }
+
+      nav a {
+        font-size: 1.2rem;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       }
 
       .hamburger {
@@ -967,6 +1072,10 @@
       .hero p {
         font-size: 1rem;
         margin-bottom: 2rem;
+      }
+
+      .map-container iframe {
+        height: 300px;
       }
     }
 
@@ -1050,7 +1159,9 @@
       </div>
       
       <button class="hamburger" id="hamburger">
-        <i class="fas fa-bars"></i>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </header>
@@ -1213,7 +1324,6 @@
     </div>
   </section>
 
-  <!-- Resto do código mantido igual (Serviços, Sobre, Depoimentos, Contato, Footer) -->
   <!-- Serviços -->
   <section class="section" id="servicos">
     <div class="container">
@@ -1384,7 +1494,7 @@
           <div class="testimonial-rating">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p>"Contratei a Isa para fazer meu aniversário e não me arrependo! As fotos e vídes ficaram incríveis e ela conseguiu capturar a emoção desse momento tão especial. Profissionalismo e talento!"</p>
+          <p>"Contratei a Isa para fazer meu aniversário e não me arrependo! As fotos e vídeos ficaram incríveis e ela conseguiu capturar a emoção desse momento tão especial. Profissionalismo e talento!"</p>
           <div class="testimonial-author">
             <img src="https://raw.githubusercontent.com/fotografaisa/fotografaisa/main/Isa.png" alt="Cliente" class="testimonial-avatar">
             <div>
@@ -1524,6 +1634,33 @@
     </div>
   </section>
 
+  <!-- Seção do Mapa -->
+  <section class="map-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="badge">Visite Nosso Estúdio</span>
+        <h2>Onde Nos Encontrar</h2>
+        <p>Venha conhecer nosso espaço e conversar sobre seu projeto</p>
+      </div>
+      
+      <div class="address-info">
+        <h3>Fotografa Isa</h3>
+        <p><strong>Av. Dr. Arruda Negreiros, 965 - Vila São Teodoro</strong></p>
+        <p>Nova Iguaçu - RJ, 26023-210</p>
+        <p><i class="fas fa-clock"></i> Segunda a Sábado: 9h às 20h</p>
+      </div>
+      
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.328415756635!2d-43.4509!3d-22.7592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQ1JzMzLjAiUyA0M8KwMjcnMDMuMCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -1627,12 +1764,29 @@
       }
     });
 
-    // ==== MENU MOBILE ====
+    // ==== MENU HAMBÚRGUER MELHORADO ====
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('mainNav');
     
     hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
       nav.classList.toggle('active');
+      
+      // Prevenir scroll do body quando menu está aberto
+      if (nav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
     });
 
     // ==== CONTADORES ANIMADOS NAS ESTATÍSTICAS ====
@@ -1722,7 +1876,9 @@
           });
           
           if (nav.classList.contains('active')) {
+            hamburger.classList.remove('active');
             nav.classList.remove('active');
+            document.body.style.overflow = 'auto';
           }
         }
       });
