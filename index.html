@@ -322,15 +322,18 @@
 
     /* ==== HERO ==== */
     .hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      margin-top: -80px; /* Compensa o padding do body */
-    }
+       position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin-top: -80px; /* Compensa o padding do body */
+  padding-top: 120px; /* Espaço extra para não ficar atrás do header */
+  padding-bottom: 80px; /* Espaço na parte inferior */
+  min-height: 100vh; /* Garante altura mínima */
+}
 
     .hero-video {
       position: absolute;
@@ -349,9 +352,10 @@
     }
 
     .hero-overlay {
-      max-width: 900px;
-      z-index: 1;
-      padding-top: 80px; /* Espaço extra para não ficar atrás do header */
+  max-width: 900px;
+  z-index: 1;
+  padding: 40px 20px; /* Padding interno para respiro */
+  margin-top: 60px; /* Empurra o conteúdo para baixo do header */
     }
 
     .hero h1 {
@@ -843,6 +847,50 @@
     }
 
     /* ==== RESPONSIVO ==== */
+
+
+/* Garante que o conteúdo do hero fique sempre visível */
+@media (max-height: 700px) {
+  .hero {
+    min-height: 700px;
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+  
+  .hero-overlay {
+    margin-top: 40px;
+  }
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    margin-top: -80px;
+  }
+
+
+
+ .hero-overlay {
+    margin-top: 40px;
+    padding: 30px 15px;
+  }
+  
+  .hero h1 {
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+  
+
+
+    
     @media (max-width: 992px) {
       .hero-actions {
         flex-direction: column;
@@ -985,6 +1033,9 @@
     </div>
   </header>
 
+
+
+  
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-video">
@@ -1002,8 +1053,6 @@
         height="100%">
       </iframe>
     </div>
-
-    <br><br> <br><br>
     
     <div class="hero-overlay container">
       <span class="badge">Fotógrafa & Videomaker Profissional</span>
@@ -1020,7 +1069,9 @@
     </div>
   </section>
 
- <br><br> <br><br>
+
+
+  
   
   <!-- Destaques -->
   <section class="section">
